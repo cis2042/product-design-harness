@@ -45,6 +45,7 @@ class SemanticGuardTests(unittest.TestCase):
             "examples/standard-gate-review.json",
             "examples/ux3-council-review.json",
             "examples/live-coding-review.json",
+            "examples/stop-reframe-review.json",
         ]:
             code, err = run_check(load_json(name))
             self.assertEqual(0, code, f"{name}: {err}")
@@ -107,6 +108,48 @@ class SemanticGuardTests(unittest.TestCase):
         code, err = run_check(document)
         self.assertNotEqual(0, code)
         self.assertIn("vacuous", err)
+
+
+
+class CouncilInputExampleTests(unittest.TestCase):
+    def test_council_input_example_validates(self):
+        from jsonschema import Draft202012Validator
+        from referencing import Registry, Resource
+
+        resources = []
+        schemas = {}
+        for path in (ROOT / "schemas").glob("*.json"):
+            schema = json.loads(path.read_text(encoding="utf-8"))
+            schemas[path.name] = schema
+            resource = Resource.from_contents(schema)
+            resources.extend([
+                (schema.get("$id", path.name), resource),
+                (path.name, resource),
+                (
+                    "https://cis2042.github.io/product-design-harness/schemas/"
+                    + path.name,
+                    resource,
+                ),
+            ])
+        registry = Registry().with_resources(resources)
+        document = load_json("examples/ux3-council-input.json")
+        validator = Draft202012Validator(
+            schemas["council-input.schema.json"], registry=registry
+        )
+        errors = [
+            f"{error.json_path}: {error.message}"
+            for error in validator.iter_errors(document)
+        ]
+        self.assertEqual([], errors)
+
+    def test_council_input_example_has_blind_round_discipline(self):
+        document = load_json("examples/ux3-council-input.json")
+        for review in document["independent_reviews"]:
+            self.assertEqual("independent", review["review_round"])
+            self.assertNotIn("objection_to", review)
+        for review in document["challenge_reviews"]:
+            self.assertEqual("challenge", review["review_round"])
+            self.assertNotEqual("none", review["objection_to"])
 
 
 if __name__ == "__main__":

@@ -62,6 +62,13 @@ class InstallableBundleTests(unittest.TestCase):
             (RESOURCES / "scripts" / "check_review.py").read_bytes(),
         )
 
+    def test_schema_ids_use_the_published_pages_urls(self):
+        published_base = "https://cis2042.github.io/product-design-harness/schemas/"
+        for schema_path in sorted((ROOT / "schemas").glob("*.schema.json")):
+            with self.subTest(schema=schema_path.name):
+                schema = json.loads(schema_path.read_text(encoding="utf-8"))
+                self.assertEqual(published_base + schema_path.name, schema["$id"])
+
     def test_machine_discovery_uses_publishable_skill_manifest(self):
         self.assertTrue((ROOT / ".nojekyll").is_file())
         manifest_path = ROOT / ".well-known" / "skill-manifest.json"

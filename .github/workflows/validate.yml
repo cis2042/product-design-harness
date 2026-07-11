@@ -22,6 +22,7 @@ jobs:
       - run: python scripts/check_review.py examples/standard-gate-review.json
       - run: python scripts/check_review.py examples/ux3-council-review.json
       - run: python scripts/check_review.py examples/live-coding-review.json
+      - run: python scripts/check_review.py examples/stop-reframe-review.json
 
   install-smoke:
     runs-on: ubuntu-latest
