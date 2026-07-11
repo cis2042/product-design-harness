@@ -32,7 +32,7 @@ y devuelve un dictamen verificable: `continue`, `verify` o `stop_reframe`.
 Es independiente del framework: prompts, JSON Schemas, archivos de conocimiento y
 definiciones de agentes se conectan a cualquier entorno. No necesita servidor ni SDK.
 Las personas entran por el sitio y el manual; los agentes instalan el bundle
-completo `.agents/skills/product-design-harness/` y luego usan `llms.txt`,
+completo `skills/product-design-harness/` y luego usan `llms.txt`,
 prompts, schemas, reglas y ejemplos de referencia. Ambos comparten el mismo
 UX3 Decision Kernel y el mismo contrato canónico.
 
@@ -150,7 +150,7 @@ Previsualice el sitio y la documentación UTF-8 con el servidor del repo:
 .venv/bin/python scripts/serve.py
 ```
 
-Para conectarlo a un agente, carga `.agents/skills/product-design-harness/SKILL.md`
+Para conectarlo a un agente, carga `skills/product-design-harness/SKILL.md`
 y conserva su directorio `resources/`; después usa
 `resources/schemas/session-config.schema.json`, `resources/knowledge/ontology.json`,
 `resources/knowledge/rules.json`, `resources/prompts/start-review.md`. Cada salida se valida con
@@ -188,8 +188,7 @@ traducción contradice el English kernel, prevalece la regla inglesa.
 
 | Path | Uso |
 |---|---|
-| `.agents/skills/product-design-harness/SKILL.md` | Punto de entrada instalable con todos los recursos de ejecución. |
-| `SKILL.md` | Contrato fuente para lectores del repositorio; el instalador lo omite y selecciona el bundle completo. |
+| `skills/product-design-harness/SKILL.md` | Punto de entrada instalable con todos los recursos de ejecución. |
 | `llms.txt` | Índice del repo legible por máquina. |
 | `schemas/session-config.schema.json` | `working_language`, `canonical_identifiers`, `fallback_language`. |
 | `schemas/review-result.schema.json` | Resultado canónico de revisión para `continue`, `verify`, `stop_reframe`. |

@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-BUNDLE = ROOT / ".agents" / "skills" / "product-design-harness"
+BUNDLE = ROOT / "skills" / "product-design-harness"
 RESOURCES = BUNDLE / "resources"
 
 RUNTIME_DIRECTORIES = [
@@ -72,7 +72,7 @@ class InstallableBundleTests(unittest.TestCase):
 
         llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
         self.assertIn(".well-known/skill-manifest.json", llms)
-        self.assertIn(".agents/skills/product-design-harness/SKILL.md", llms)
+        self.assertIn("skills/product-design-harness/SKILL.md", llms)
 
 
 if __name__ == "__main__":

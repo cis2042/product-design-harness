@@ -9,7 +9,7 @@
   "interface": {
     "type": "installable_skill",
     "installCommand": "npx skills add cis2042/product-design-harness -g -y",
-    "entryPoint": ".agents/skills/product-design-harness/SKILL.md",
+    "entryPoint": "skills/product-design-harness/SKILL.md",
     "remoteEndpoint": null
   },
   "capabilities": {

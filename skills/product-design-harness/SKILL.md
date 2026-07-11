@@ -1,8 +1,7 @@
 ---
 name: product-design-harness
 description: Use when a product direction, feature, workflow, experiment, launch, feedback signal, automation, or scale decision needs judgment before execution or the next iteration.
-metadata:
-  internal: true
+license: MIT
 ---
 
 # Product Design Harness
@@ -17,18 +16,18 @@ automation, or investment.
 
 Load in this order:
 
-1. `schemas/session-config.schema.json`: set `working_language`; keep
+1. `resources/schemas/session-config.schema.json`: set `working_language`; keep
    `canonical_identifiers` in English.
-2. `knowledge/ontology.json`: use the canonical UX3 knowledge kernel and its
+2. `resources/knowledge/ontology.json`: use the canonical UX3 knowledge kernel and its
    approved Flow definitions.
-3. `knowledge/rules.json`: load required rules plus only triggered conditional
+3. `resources/knowledge/rules.json`: load required rules plus only triggered conditional
    rules.
-4. `prompts/start-review.md`.
+4. `resources/prompts/start-review.md`.
 
-Then fill `templates/product-brief.md`, select the smallest responsible mode,
-and return `schemas/review-result.schema.json`.
+Then fill `resources/templates/product-brief.md`, select the smallest responsible mode,
+and return `resources/schemas/review-result.schema.json`.
 
-Validate every review result with `scripts/check_review.py`. JSON Schema checks
+Validate every review result with `resources/scripts/check_review.py`. JSON Schema checks
 shape and conditional fields; `check_review.py` is the canonical validator for
 the worst-verdict, weakest-flow, and headline-tier semantic checks.
 
@@ -62,7 +61,7 @@ and Sustainable Value Exchange.
 
 Apply the same reduction sequence to every submitted review:
 
-1. Validate lane contracts and evidence references with `scripts/check_review.py`.
+1. Validate lane contracts and evidence references with `resources/scripts/check_review.py`.
 2. Reduce to the worst verdict and deterministic weakest flow.
 3. Gate uncertainty, risk, reversibility, and human-owned calls.
 4. Emit one canonical verdict, next action, execution boundary, and stop conditions.
@@ -109,7 +108,7 @@ outvote a weak one.
 
 | Verdict | Required next step |
 |---|---|
-| continue | Create templates/context-pack.md within the execution boundary. |
+| continue | Create resources/templates/context-pack.md within the execution boundary. |
 | verify | Run one proof step only. |
 | stop_reframe | Stop execution and return a better product question. |
 
@@ -120,5 +119,5 @@ ux3.rule.minimum_validated_proof, ux3.rule.feedback_classification, and
 ux3.rule.human_judgment. The distilled trigger table above covers additional
 rules that activate only when their specific product condition appears.
 
-Use docs/HARNESS.md for the handbook, docs/OPERATING-PROTOCOL.md for the six-gate protocol,
-docs/CONTRACTS.md for output rules, and examples/ for worked reviews.
+Use resources/docs/HARNESS.md for the handbook, resources/docs/OPERATING-PROTOCOL.md for the six-gate protocol,
+resources/docs/CONTRACTS.md for output rules, and resources/examples/ for worked reviews.

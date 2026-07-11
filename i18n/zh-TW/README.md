@@ -33,7 +33,7 @@ agent runtime。它沒有 server 或 SDK；唯一依賴是 `jsonschema`，供
 `scripts/check_review.py` 與 `scripts/validate.py` 驗證 review 輸出與 repo 契約。
 
 同一套知識有兩個入口：人類閱讀專案網站與 handbook；agent 安裝
-`.agents/skills/product-design-harness/` 完整 bundle，再讀取 `llms.txt`、
+`skills/product-design-harness/` 完整 bundle，再讀取 `llms.txt`、
 prompts、schemas、rules 與 golden examples。
 兩個入口共用同一個 UX3 Decision Kernel 與 canonical review contract。
 
@@ -151,7 +151,7 @@ python3 -m venv .venv
 
 導入 agent 時：
 
-1. 把 `.agents/skills/product-design-harness/SKILL.md` 載入為 harness skill 或 system instruction，並保留同層的 `resources/`。
+1. 把 `skills/product-design-harness/SKILL.md` 載入為 harness skill 或 system instruction，並保留同層的 `resources/`。
 2. 依序載入 `resources/schemas/session-config.schema.json`、`resources/knowledge/ontology.json`、`resources/knowledge/rules.json`、`resources/prompts/start-review.md`。
 3. 每份輸出都用 `resources/scripts/check_review.py` 驗證；JSON Schema 檢查結構與條件，validator 另外檢查 weakest-flow 與 headline-tier。
 4. 第一批輸出要和三份 golden review examples 比對。
@@ -186,8 +186,7 @@ paths、evidence IDs，或 canonical verdicts：`continue`、`verify`、
 
 | Path | 用途 |
 |---|---|
-| `.agents/skills/product-design-harness/SKILL.md` | 可安裝的 skill entrypoint，包含完整 runtime resources。 |
-| `SKILL.md` | 供 repository 閱讀者使用的 source contract；installer 會略過它並選取完整 bundle。 |
+| `skills/product-design-harness/SKILL.md` | 可安裝的 skill entrypoint，包含完整 runtime resources。 |
 | `llms.txt` | 機器可讀的 repo 索引。 |
 | `schemas/session-config.schema.json` | `working_language`、`canonical_identifiers`、`fallback_language`。 |
 | `schemas/review-result.schema.json` | `continue`、`verify`、`stop_reframe` 的 canonical review result。 |

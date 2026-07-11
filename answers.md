@@ -28,7 +28,7 @@ workflow, experiment, or costly irreversible commitment. Skip it for purely
 mechanical execution that already has an approved boundary and valid context
 pack.
 
-Source: [Installable skill](https://github.com/cis2042/product-design-harness/blob/main/.agents/skills/product-design-harness/SKILL.md)
+Source: [Installable skill](https://github.com/cis2042/product-design-harness/blob/main/skills/product-design-harness/SKILL.md)
 
 ## What are the three UX3 flows?
 
