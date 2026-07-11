@@ -122,12 +122,6 @@ mode 를 고른다.
 npx skills add cis2042/product-design-harness -g -y
 ```
 
-Private repo 는 인증된 GitHub SSH remote 를 사용한다.
-
-```text
-npx skills add git@github.com:cis2042/product-design-harness.git -g -y
-```
-
 전체 repo 를 검사하고 검증하려면:
 
 ```text

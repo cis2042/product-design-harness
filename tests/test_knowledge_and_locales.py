@@ -77,9 +77,6 @@ REQUIRED_README_MARKERS = [
 PUBLIC_SKILL_INSTALL_COMMAND = (
     "npx skills add cis2042/product-design-harness -g -y"
 )
-PRIVATE_SKILL_INSTALL_COMMAND = (
-    "npx skills add git@github.com:cis2042/product-design-harness.git -g -y"
-)
 REQUIRED_README_TOKENS = [
     "User Flow",
     "Evidence Flow",
@@ -305,12 +302,11 @@ class KnowledgeAndLocaleContractTests(unittest.TestCase):
                 self.assertIn("knowledge/source-chapters.json", text)
                 self.assertIn("docs/DECISION-RULES.md", text)
 
-    def test_readmes_expose_public_and_private_agent_install_commands(self):
+    def test_readmes_expose_the_public_agent_install_command(self):
         for locale in manifest_locales():
             text = readme_path_for_locale(locale["code"]).read_text(encoding="utf-8")
             with self.subTest(locale=locale["code"]):
                 self.assertIn(PUBLIC_SKILL_INSTALL_COMMAND, text)
-                self.assertIn(PRIVATE_SKILL_INSTALL_COMMAND, text)
 
     def test_all_relative_readme_links_and_anchors_resolve(self):
         findings = []

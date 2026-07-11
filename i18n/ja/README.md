@@ -122,12 +122,6 @@ mode を選びます。
 npx skills add cis2042/product-design-harness -g -y
 ```
 
-Private repo では認証済み GitHub SSH remote を使います：
-
-```text
-npx skills add git@github.com:cis2042/product-design-harness.git -g -y
-```
-
 repo 全体を検査する場合：
 
 ```text

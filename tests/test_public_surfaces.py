@@ -215,7 +215,7 @@ class PublicSurfaceTests(unittest.TestCase):
         self.assertIn('<div class="eyebrow">For Humans</div>', html)
         self.assertIn('<div class="eyebrow">For Agents</div>', html)
         self.assertIn("Read the philosophy", html)
-        self.assertIn("Install for AI agents", html)
+        self.assertIn("Install for agent", html)
         self.assertNotIn("Read the contract", html)
 
     def test_agent_entrance_exposes_copyable_public_install_command(self):
@@ -223,12 +223,7 @@ class PublicSurfaceTests(unittest.TestCase):
         public_command = (
             "npx skills add cis2042/product-design-harness -g -y"
         )
-        private_command = (
-            "npx skills add git@github.com:cis2042/"
-            "product-design-harness.git -g -y"
-        )
         self.assertGreaterEqual(html.count(public_command), 2)
-        self.assertIn(private_command, html)
         self.assertIn('class="install-command"', html)
         self.assertIn('class="cli-terminal"', html)
         self.assertIn('class="cli-titlebar"', html)
@@ -239,7 +234,23 @@ class PublicSurfaceTests(unittest.TestCase):
         self.assertIn("btn.dataset.defaultLabel", html)
         self.assertIn('markDone(btn, "unavailable")', html)
         self.assertIn("Public install", html)
-        self.assertIn("Private repository", html)
+
+    def test_public_install_surfaces_do_not_offer_an_ssh_install_url(self):
+        surfaces = [
+            ROOT / "README.md",
+            ROOT / "index.html",
+            *(ROOT / "i18n").glob("*/README.md"),
+        ]
+        for path in surfaces:
+            with self.subTest(path=str(path.relative_to(ROOT))):
+                self.assertNotIn(
+                    "git@github.com:cis2042/product-design-harness.git",
+                    path.read_text(encoding="utf-8"),
+                )
+                self.assertNotIn(
+                    "Private repository",
+                    path.read_text(encoding="utf-8"),
+                )
 
     def test_human_and_agent_entrances_have_distinct_surface_treatments(self):
         html = (ROOT / "index.html").read_text(encoding="utf-8")

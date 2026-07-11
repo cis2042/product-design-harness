@@ -91,5 +91,3 @@ After installation, ask the agent:
 - UX3 is an installable Skill. This repository does not expose a hosted remote
   agent endpoint or claim A2A service compatibility.
 - A continue verdict permits only the bounded action recorded in the review.
-- Public installation cannot be verified anonymously while the repository is
-  private.
