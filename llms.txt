@@ -12,7 +12,8 @@ Expanded machine context and canonical answers:
 
 - llms-full.txt
 - answers.md
-- .well-known/agent-card.json
+- .well-known/skill-manifest.json
+- .well-known/agent-card.json (compatibility copy of the skill manifest)
 
 Canonical contract (every mode returns this):
 
@@ -20,7 +21,7 @@ Canonical contract (every mode returns this):
 
 Entry point (selects Quick Gate, Standard Gate, or UX3 Council):
 
-- SKILL.md
+- .agents/skills/product-design-harness/SKILL.md
 - prompts/start-review.md
 
 Contract-enforced rules (JSON Schema plus scripts/check_review.py, not prose):

@@ -32,8 +32,9 @@ und liefert eine maschinenprüfbare Beurteilung: `continue`, `verify` oder
 
 Sie ist framework-unabhängig: Prompts, JSON Schemas, Wissensdateien und Agentendefinitionen
 lassen sich in jede Laufzeit einbinden. Server und SDK sind nicht erforderlich. Menschen
-nutzen Website und Handbuch; Agenten nutzen `SKILL.md`, `llms.txt`, Prompts, Schemas,
-Regeln und Referenzbeispiele. Beide folgen demselben UX3 Decision Kernel und Vertrag.
+nutzen Website und Handbuch; Agenten installieren das vollständige Bundle
+`.agents/skills/product-design-harness/` und nutzen dann `llms.txt`, Prompts,
+Schemas, Regeln und Referenzbeispiele. Beide folgen demselben UX3 Decision Kernel und Vertrag.
 
 <!-- where-it-sits -->
 ## Wo es einzuordnen ist
@@ -149,10 +150,11 @@ Website und UTF-8-Dokumentation mit dem Repo-Server anzeigen:
 .venv/bin/python scripts/serve.py
 ```
 
-Zur Einbindung in einen Agenten zuerst `SKILL.md` laden, danach
-`schemas/session-config.schema.json`, `knowledge/ontology.json`,
-`knowledge/rules.json`, `prompts/start-review.md`. Jede Ausgabe wird mit
-`schemas/review-result.schema.json` validiert.
+Zur Einbindung in einen Agenten zuerst `.agents/skills/product-design-harness/SKILL.md`
+laden und das zugehörige Verzeichnis `resources/` beibehalten, danach
+`resources/schemas/session-config.schema.json`, `resources/knowledge/ontology.json`,
+`resources/knowledge/rules.json`, `resources/prompts/start-review.md`. Jede Ausgabe wird mit
+`resources/schemas/review-result.schema.json` validiert.
 
 Grenze für die Übergabe an die Programmierung: Die Prüfung ist keine
 Implementierung. `verify` erlaubt nur den exakt benannten Prüfschritt.
@@ -188,7 +190,8 @@ Regel.
 
 | Path | Zweck |
 |---|---|
-| `SKILL.md` | Installierbarer Einstiegspunkt der Skill. |
+| `.agents/skills/product-design-harness/SKILL.md` | Installierbarer Einstiegspunkt mit allen Laufzeitressourcen. |
+| `SKILL.md` | Quellvertrag für Repo-Leser; der Installer überspringt ihn und wählt das vollständige Bundle. |
 | `llms.txt` | Maschinenlesbarer Repo-Index. |
 | `schemas/session-config.schema.json` | `working_language`, `canonical_identifiers`, `fallback_language`. |
 | `schemas/review-result.schema.json` | Kanonisches Prüfergebnis für `continue`, `verify`, `stop_reframe`. |

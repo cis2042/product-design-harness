@@ -29,8 +29,9 @@ UX3 Product Design Harness 는 제품 루프의 판단 계층이다. "왜 만드
 반환한다.
 
 prompt, JSON Schema, 지식 파일, agent 정의로 구성되며 특정 framework, server,
-SDK 에 종속되지 않는다. 사람은 사이트와 handbook, agent 는 `SKILL.md`, `llms.txt`,
-prompts, schemas, rules, golden examples 를 입구로 사용한다. 두 입구는 같은
+SDK 에 종속되지 않는다. 사람은 사이트와 handbook, agent 는
+`.agents/skills/product-design-harness/` 완전 bundle 을 설치한 뒤 `llms.txt`,
+prompts, schemas, rules, golden examples 를 사용한다. 두 입구는 같은
 UX3 Decision Kernel 과 canonical review contract 를 공유한다.
 
 <!-- where-it-sits -->
@@ -145,10 +146,11 @@ repo server 로 웹사이트와 UTF-8 문서를 미리 본다.
 .venv/bin/python scripts/serve.py
 ```
 
-agent 에 연결할 때는 `SKILL.md` 를 로드한 뒤
-`schemas/session-config.schema.json`, `knowledge/ontology.json`,
-`knowledge/rules.json`, `prompts/start-review.md` 순서로 사용한다.
-모든 출력은 `schemas/review-result.schema.json` 으로 검증한다.
+agent 에 연결할 때는 `.agents/skills/product-design-harness/SKILL.md` 를 로드하고
+같은 위치의 `resources/` 를 유지한다. 그 뒤
+`resources/schemas/session-config.schema.json`, `resources/knowledge/ontology.json`,
+`resources/knowledge/rules.json`, `resources/prompts/start-review.md` 순서로 사용한다.
+모든 출력은 `resources/schemas/review-result.schema.json` 으로 검증한다.
 
 Live-coding handoff boundary: review 는 implementation 이 아니다. `verify`
 는 exact proof step 만 허용한다. `continue` 와 유효한
@@ -180,7 +182,8 @@ file paths, evidence IDs, canonical verdicts 인 `continue`, `verify`,
 
 | Path | 목적 |
 |---|---|
-| `SKILL.md` | Installable skill entrypoint. |
+| `.agents/skills/product-design-harness/SKILL.md` | 완전한 runtime resources 를 포함한 installable skill entrypoint. |
+| `SKILL.md` | repository 독자를 위한 source contract. installer 는 이를 건너뛰고 완전한 bundle 을 선택한다. |
 | `llms.txt` | 기계가 읽는 repo index. |
 | `schemas/session-config.schema.json` | `working_language`, `canonical_identifiers`, `fallback_language`. |
 | `schemas/review-result.schema.json` | `continue`, `verify`, `stop_reframe` 의 canonical review result. |

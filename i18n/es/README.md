@@ -31,7 +31,8 @@ y devuelve un dictamen verificable: `continue`, `verify` o `stop_reframe`.
 
 Es independiente del framework: prompts, JSON Schemas, archivos de conocimiento y
 definiciones de agentes se conectan a cualquier entorno. No necesita servidor ni SDK.
-Las personas entran por el sitio y el manual; los agentes por `SKILL.md`, `llms.txt`,
+Las personas entran por el sitio y el manual; los agentes instalan el bundle
+completo `.agents/skills/product-design-harness/` y luego usan `llms.txt`,
 prompts, schemas, reglas y ejemplos de referencia. Ambos comparten el mismo
 UX3 Decision Kernel y el mismo contrato canónico.
 
@@ -149,10 +150,11 @@ Previsualice el sitio y la documentación UTF-8 con el servidor del repo:
 .venv/bin/python scripts/serve.py
 ```
 
-Para conectarlo a un agente, carga `SKILL.md` y después
-`schemas/session-config.schema.json`, `knowledge/ontology.json`,
-`knowledge/rules.json`, `prompts/start-review.md`. Cada salida se valida con
-`schemas/review-result.schema.json`.
+Para conectarlo a un agente, carga `.agents/skills/product-design-harness/SKILL.md`
+y conserva su directorio `resources/`; después usa
+`resources/schemas/session-config.schema.json`, `resources/knowledge/ontology.json`,
+`resources/knowledge/rules.json`, `resources/prompts/start-review.md`. Cada salida se valida con
+`resources/schemas/review-result.schema.json`.
 
 Límite de entrega para programación: la revisión no es implementación.
 `verify` autoriza solo el paso exacto de prueba. `continue` más un
@@ -186,7 +188,8 @@ traducción contradice el English kernel, prevalece la regla inglesa.
 
 | Path | Uso |
 |---|---|
-| `SKILL.md` | Punto de entrada instalable de la skill. |
+| `.agents/skills/product-design-harness/SKILL.md` | Punto de entrada instalable con todos los recursos de ejecución. |
+| `SKILL.md` | Contrato fuente para lectores del repositorio; el instalador lo omite y selecciona el bundle completo. |
 | `llms.txt` | Índice del repo legible por máquina. |
 | `schemas/session-config.schema.json` | `working_language`, `canonical_identifiers`, `fallback_language`. |
 | `schemas/review-result.schema.json` | Resultado canónico de revisión para `continue`, `verify`, `stop_reframe`. |

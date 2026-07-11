@@ -16,4 +16,12 @@
     <loc>https://cis2042.github.io/product-design-harness/answers.md</loc>
     <lastmod>2026-07-11</lastmod>
   </url>
+  <url>
+    <loc>https://cis2042.github.io/product-design-harness/.well-known/skill-manifest.json</loc>
+    <lastmod>2026-07-11</lastmod>
+  </url>
+  <url>
+    <loc>https://cis2042.github.io/product-design-harness/.agents/skills/product-design-harness/SKILL.md</loc>
+    <lastmod>2026-07-11</lastmod>
+  </url>
 </urlset>

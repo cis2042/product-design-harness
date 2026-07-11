@@ -143,6 +143,7 @@ class PublicSurfaceTests(unittest.TestCase):
             "answers.md",
             "llms-full.txt",
             ".well-known/agent-card.json",
+            ".well-known/skill-manifest.json",
         ]:
             self.assertTrue((ROOT / relative_path).is_file(), relative_path)
 
@@ -169,10 +170,19 @@ class PublicSurfaceTests(unittest.TestCase):
         card = json.loads(
             (ROOT / ".well-known/agent-card.json").read_text(encoding="utf-8")
         )
+        manifest = json.loads(
+            (ROOT / ".well-known/skill-manifest.json").read_text(encoding="utf-8")
+        )
+        self.assertEqual("skill_manifest", card["manifestType"])
+        self.assertEqual("skill_manifest", manifest["manifestType"])
         self.assertEqual("installable_skill", card["interface"]["type"])
+        self.assertEqual("installable_skill", manifest["interface"]["type"])
         self.assertIsNone(card["interface"]["remoteEndpoint"])
+        self.assertIsNone(manifest["interface"]["remoteEndpoint"])
         self.assertIn("npx skills add", card["interface"]["installCommand"])
+        self.assertIn(".agents/skills/product-design-harness/SKILL.md", manifest["interface"]["entryPoint"])
         self.assertFalse(card["claims"]["a2aEndpoint"])
+        self.assertFalse(manifest["claims"]["a2aEndpoint"])
 
         answers = (ROOT / "answers.md").read_text(encoding="utf-8")
         full_context = (ROOT / "llms-full.txt").read_text(encoding="utf-8")
@@ -187,6 +197,7 @@ class PublicSurfaceTests(unittest.TestCase):
         self.assertIn("llms-full.txt", concise_context)
         self.assertIn("Agentic Design Process", concise_context)
         self.assertIn("Designer-in-the-Loop", concise_context)
+        self.assertIn(".well-known/skill-manifest.json", concise_context)
 
         self.assertTrue(card["capabilities"]["agenticDesignProcess"])
         self.assertTrue(card["capabilities"]["designerInTheLoop"])

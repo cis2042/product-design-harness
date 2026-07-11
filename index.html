@@ -868,7 +868,7 @@
       <details class="faq-item">
         <summary>When should an agent invoke UX3?</summary>
         <p>Invoke UX3 before a new or materially changed product direction, feature, workflow, experiment, or costly irreversible commitment. Skip it for purely mechanical execution that already has an approved boundary and valid context pack.</p>
-        <a class="faq-source" href="SKILL.md">Source: skill contract</a>
+        <a class="faq-source" href=".agents/skills/product-design-harness/SKILL.md">Source: installable skill</a>
       </details>
       <details class="faq-item">
         <summary>What are the three UX3 flows?</summary>
@@ -1005,10 +1005,10 @@ python3 -m venv .venv
 .venv/bin/python scripts/validate.py            <span class="c"># schema, asset, encoding checks</span>
 .venv/bin/python scripts/check_review.py examples/quick-gate-review.json</pre></li>
       <li><b>wire into your agent</b>
-<pre>load  SKILL.md                        <span class="dim"># trigger + operating summary</span>
-entry prompts/start-review.md         <span class="dim"># mode selection</span>
-defs  agents/registry.json            <span class="dim"># six reviewers, machine-readable</span>
-emit  schemas/review-result.schema.json  <span class="dim"># the only final output shape</span></pre></li>
+<pre>load  SKILL.md                        <span class="dim"># installed skill root</span>
+entry resources/prompts/start-review.md <span class="dim"># mode selection</span>
+defs  resources/agents/registry.json  <span class="dim"># six reviewers, machine-readable</span>
+emit  resources/schemas/review-result.schema.json <span class="dim"># the only final output shape</span></pre></li>
       <li><b>gate your own outputs in CI</b>
 <pre>.venv/bin/python scripts/check_review.py &lt;your-review&gt;.json
 <span class="dim"># validates JSON shape + weakest-flow algorithm</span>

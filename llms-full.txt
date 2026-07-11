@@ -73,7 +73,7 @@ After installation, ask the agent:
 ## Canonical Sources
 
 - Canonical answers: answers.md
-- Skill entry point: SKILL.md
+- Skill entry point: .agents/skills/product-design-harness/SKILL.md
 - UX3 model: docs/UX3.md
 - Full handbook: docs/HARNESS.md
 - Contracts: docs/CONTRACTS.md

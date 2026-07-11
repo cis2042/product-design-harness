@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://productdesignharness.org/schemas/council-input.schema.json",
+  "title": "Product Design Harness Council Input",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "product_brief",
+    "claim_analysis",
+    "independent_reviews",
+    "challenge_reviews",
+    "uncertainty_review"
+  ],
+  "properties": {
+    "product_brief": { "$ref": "product-brief.schema.json" },
+    "claim_analysis": { "$ref": "claim-analysis.schema.json" },
+    "independent_reviews": {
+      "type": "array",
+      "items": { "$ref": "reviewer-verdict.schema.json" },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "challenge_reviews": {
+      "type": "array",
+      "items": { "$ref": "reviewer-verdict.schema.json" },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "uncertainty_review": { "$ref": "uncertainty-review.schema.json" }
+  }
+}

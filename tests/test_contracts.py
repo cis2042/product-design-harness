@@ -842,6 +842,8 @@ class HarnessContractTests(unittest.TestCase):
             text = path.read_text(encoding="utf-8")
             for token in validate.REPOSITORY_PATH_TOKEN.findall(text):
                 candidates = [ROOT / token, path.parent / token]
+                if token.startswith("resources/"):
+                    candidates.append(validate.BUNDLE_ROOT / token)
                 if not any(candidate.exists() for candidate in candidates):
                     missing.append(f"{path.relative_to(ROOT)}: {token}")
             for token in validate.BARE_FILE_TOKEN.findall(text):
