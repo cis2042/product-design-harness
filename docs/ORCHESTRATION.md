@@ -42,6 +42,23 @@ documents, logs, tickets, and workflow traces.
 3. Retrieve missing evidence through the evidence contract.
 4. Fork User, Evidence, and Business reviewers in parallel.
 5. Wait for all three independent reviews.
+
+Two execution paths, either is compliant:
+
+- Parallel dispatch: if the runtime has a task or subagent tool, dispatch
+  the three lane reviewers concurrently. Assemble each reviewer's input as
+  the product brief plus claim analysis plus the relevant knowledge rules,
+  and collect each reviewer's output as one reviewer-verdict JSON object.
+- Single-context rotation (fallback): one agent plays each reviewer in
+  sequence. Blind-round discipline still applies: write each lane's
+  complete reviewer-verdict JSON before reading the next lane's brief,
+  and never revise an earlier lane after seeing a later one.
+
+Unanimous-continue red flag: if all three independent lane reviews return
+continue in a council-tier decision, treat agreement as a signal to probe,
+not to relax. Run prompts/red-team.md before synthesis and hand its
+findings to the facilitator as additional input; the facilitator may
+downgrade the combined verdict to verify on red-team findings alone.
 6. Run one challenge round per lane.
 7. Run Uncertainty Reviewer on evidence tier, risk, reversibility, and freshness.
 8. Run Council Facilitator.

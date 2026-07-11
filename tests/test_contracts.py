@@ -67,7 +67,7 @@ def contract_validator(relative_path):
                 (external_schema["$id"], resource),
                 (schema_name, resource),
                 (
-                    f"https://productdesignharness.org/schemas/{schema_name}",
+                    f"https://cis2042.github.io/product-design-harness/schemas/{schema_name}",
                     resource,
                 ),
             ]
@@ -156,6 +156,7 @@ class HarnessContractTests(unittest.TestCase):
             "examples/human-decision.json",
             "examples/evidence-response.json",
             "examples/ux3-council-review.json",
+            "examples/stop-reframe-review.json",
             "schemas/evidence-request.schema.json",
             "schemas/evidence-response.schema.json",
         ]
@@ -411,6 +412,7 @@ class HarnessContractTests(unittest.TestCase):
             "examples/quick-gate-review.json",
             "examples/standard-gate-review.json",
             "examples/ux3-council-review.json",
+            "examples/stop-reframe-review.json",
         ]:
             example = load_json(relative_path)
             validator.validate(example)
@@ -932,6 +934,7 @@ class HarnessContractTests(unittest.TestCase):
             "examples/quick-gate-review.json",
             "examples/standard-gate-review.json",
             "examples/ux3-council-review.json",
+            "examples/stop-reframe-review.json",
         ]:
             example = load_json(relative_path)
             severities = [
@@ -1017,6 +1020,7 @@ class HarnessContractTests(unittest.TestCase):
             "examples/quick-gate-review.json",
             "examples/standard-gate-review.json",
             "examples/ux3-council-review.json",
+            "examples/stop-reframe-review.json",
             "examples/live-coding-review.json",
         ]:
             completed = subprocess.run(
