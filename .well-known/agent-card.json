@@ -1,0 +1,45 @@
+{
+  "name": "UX3 Product Design Harness",
+  "description": "An installable Agentic Design Process that reviews User Flow, Evidence Flow, and Business Flow while keeping accountable judgment Designer-in-the-Loop.",
+  "url": "https://cis2042.github.io/product-design-harness/",
+  "repositoryUrl": "https://github.com/cis2042/product-design-harness",
+  "documentationUrl": "https://cis2042.github.io/product-design-harness/answers.md",
+  "interface": {
+    "type": "installable_skill",
+    "installCommand": "npx skills add cis2042/product-design-harness -g -y",
+    "entryPoint": "SKILL.md",
+    "remoteEndpoint": null
+  },
+  "capabilities": {
+    "agenticDesignProcess": true,
+    "designerInTheLoop": true,
+    "productDecisionReview": true,
+    "claimAnalysis": true,
+    "uncertaintyReview": true,
+    "humanJudgmentGate": true,
+    "reviewModes": [
+      "quick_gate",
+      "standard_gate",
+      "ux3_council"
+    ]
+  },
+  "input": {
+    "primary": "product decision",
+    "schema": "schemas/product-brief.schema.json"
+  },
+  "output": {
+    "primary": "canonical review result",
+    "schema": "schemas/review-result.schema.json",
+    "verdicts": [
+      "continue",
+      "verify",
+      "stop_reframe"
+    ]
+  },
+  "claims": {
+    "a2aEndpoint": false,
+    "hostedService": false,
+    "rankingGuarantee": false
+  },
+  "lastReviewed": "2026-07-11"
+}

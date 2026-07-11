@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Product Design Harness cover</title>
+  <desc id="desc">An editorial cover for Product Design Harness, a UX3 handbook for product direction before execution.</desc>
+  <rect width="1280" height="720" fill="#eee8dc"/>
+  <rect x="92" y="66" width="1096" height="588" fill="#fbfaf7" stroke="#cfc6b6" stroke-width="2"/>
+  <line x1="190" y1="66" x2="190" y2="654" stroke="#cfc6b6" stroke-width="2"/>
+  <line x1="240" y1="128" x2="1128" y2="128" stroke="#ded6c8" stroke-width="2"/>
+  <text x="132" y="126" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="#62594b">UX3</text>
+  <text x="132" y="154" font-family="Inter, Arial, sans-serif" font-size="13" fill="#857b6d">handbook</text>
+  <text x="240" y="108" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#7a6f60">PRODUCT DIRECTION BEFORE EXECUTION</text>
+
+  <text x="240" y="238" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="800" fill="#1f2933">Product Design</text>
+  <text x="240" y="312" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="800" fill="#1f2933">Harness</text>
+  <text x="244" y="370" font-family="Inter, Arial, sans-serif" font-size="24" fill="#5f6b73">The product judgment layer before coding harness.</text>
+
+  <g transform="translate(244 458)" font-family="Inter, Arial, sans-serif">
+    <line x1="0" y1="0" x2="790" y2="0" stroke="#ded6c8" stroke-width="2"/>
+    <g transform="translate(0 42)">
+      <text x="0" y="0" font-size="13" font-weight="700" fill="#8b5f2a">01</text>
+      <text x="44" y="0" font-size="25" font-weight="760" fill="#253b58">User Flow</text>
+      <text x="44" y="34" font-size="17" fill="#5f6b73">situations, behavior, consequence</text>
+    </g>
+    <g transform="translate(288 42)">
+      <text x="0" y="0" font-size="13" font-weight="700" fill="#8b5f2a">02</text>
+      <text x="44" y="0" font-size="25" font-weight="760" fill="#2f5d59">Evidence Flow</text>
+      <text x="44" y="34" font-size="17" fill="#5f6b73">signals, sources, disproof</text>
+    </g>
+    <g transform="translate(590 42)">
+      <text x="0" y="0" font-size="13" font-weight="700" fill="#8b5f2a">03</text>
+      <text x="44" y="0" font-size="25" font-weight="760" fill="#7a4d22">Business Flow</text>
+      <text x="44" y="34" font-size="17" fill="#5f6b73">value, cost, durability</text>
+    </g>
+  </g>
+
+  <rect x="1088" y="96" width="68" height="468" fill="none" stroke="#ded6c8" stroke-width="2"/>
+  <line x1="1122" y1="132" x2="1122" y2="528" stroke="#ded6c8" stroke-width="2"/>
+  <circle cx="1122" cy="330" r="42" fill="none" stroke="#9d7550" stroke-width="3"/>
+  <text x="1122" y="324" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="800" fill="#1f2933">UX</text>
+  <text x="1122" y="350" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="800" fill="#1f2933">3</text>
+</svg>

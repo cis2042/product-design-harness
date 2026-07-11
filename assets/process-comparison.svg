@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="662" viewBox="0 0 920 508" role="img" aria-labelledby="pctitle pcdesc">
+  <title id="pctitle">Where the Product Design Harness sits</title>
+  <desc id="pcdesc">Three rows compare the traditional product process, the AI-assisted process guarded only by a coding harness, and the full loop guarded by the Product Design Harness.</desc>
+  <rect width="920" height="490" fill="#fbfaf7"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L8 4 L0 8 Z" fill="#66727a"/>
+    </marker>
+    <marker id="arrg" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L8 4 L0 8 Z" fill="#1E6B4F"/>
+    </marker>
+  </defs>
+  <g font-family="Inter, Arial, sans-serif">
+    <text x="20" y="32" font-size="12" font-weight="700" letter-spacing="1.5" fill="#66727a">01 - TRADITIONAL PRODUCT TEAM</text>
+    <g font-size="9.5" fill="#66727a">
+      <text x="205" y="56" text-anchor="middle">PM + RESEARCHER</text>
+      <text x="330" y="56" text-anchor="middle">PM</text>
+      <text x="455" y="56" text-anchor="middle">DESIGNER</text>
+      <text x="580" y="56" text-anchor="middle">ENGINEER</text>
+      <text x="705" y="56" text-anchor="middle">QA</text>
+      <text x="830" y="56" text-anchor="middle">WHOLE TEAM</text>
+    </g>
+    <g fill="#ffffff" stroke="#d5cfc2" stroke-width="1.5">
+      <rect x="150" y="64" width="110" height="34"/>
+      <rect x="275" y="64" width="110" height="34"/>
+      <rect x="400" y="64" width="110" height="34"/>
+      <rect x="525" y="64" width="110" height="34"/>
+      <rect x="650" y="64" width="110" height="34"/>
+      <rect x="775" y="64" width="110" height="34"/>
+    </g>
+    <g font-size="12.5" fill="#1f2933">
+      <text x="205" y="86" text-anchor="middle">Research</text>
+      <text x="330" y="86" text-anchor="middle">Spec</text>
+      <text x="455" y="86" text-anchor="middle">Design</text>
+      <text x="580" y="86" text-anchor="middle">Build</text>
+      <text x="705" y="86" text-anchor="middle">Test</text>
+      <text x="830" y="86" text-anchor="middle">Ship</text>
+    </g>
+    <g stroke="#66727a" stroke-width="1.2">
+      <line x1="260" y1="81" x2="273" y2="81" marker-end="url(#arr)"/>
+      <line x1="385" y1="81" x2="398" y2="81" marker-end="url(#arr)"/>
+      <line x1="510" y1="81" x2="523" y2="81" marker-end="url(#arr)"/>
+      <line x1="635" y1="81" x2="648" y2="81" marker-end="url(#arr)"/>
+      <line x1="760" y1="81" x2="773" y2="81" marker-end="url(#arr)"/>
+    </g>
+    <text x="150" y="124" font-size="12" font-style="italic" fill="#66727a">Taste and value alignment lives in many human roles, at every step.</text>
+
+    <text x="20" y="172" font-size="12" font-weight="700" letter-spacing="1.5" fill="#66727a">02 - AI-ASSISTED, CODING HARNESS ONLY</text>
+    <rect x="150" y="190" width="140" height="34" fill="none" stroke="#A33D2A" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="220" y="212" text-anchor="middle" font-size="12.5" fill="#1f2933">Why build this?</text>
+    <text x="220" y="240" text-anchor="middle" font-size="10" font-style="italic" fill="#A33D2A">unguarded</text>
+    <rect x="305" y="190" width="86" height="34" fill="#ffffff" stroke="#d5cfc2" stroke-width="1.5"/>
+    <text x="348" y="212" text-anchor="middle" font-size="12.5" fill="#1f2933">Spec</text>
+    <text x="548" y="182" text-anchor="middle" font-size="10.5" font-weight="700" letter-spacing="1" fill="#66727a">CODING HARNESS - DO THINGS RIGHT</text>
+    <rect x="406" y="190" width="284" height="34" fill="#ffffff" stroke="#d5cfc2" stroke-width="1.5"/>
+    <text x="548" y="212" text-anchor="middle" font-size="12.5" fill="#1f2933">Build &#8646; Test &#8646; Iterate</text>
+    <rect x="705" y="190" width="80" height="34" fill="#ffffff" stroke="#d5cfc2" stroke-width="1.5"/>
+    <text x="745" y="212" text-anchor="middle" font-size="12.5" fill="#1f2933">Ship</text>
+    <rect x="800" y="190" width="100" height="34" fill="none" stroke="#A33D2A" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="850" y="212" text-anchor="middle" font-size="12.5" fill="#1f2933">Feedback</text>
+    <text x="850" y="240" text-anchor="middle" font-size="10" font-style="italic" fill="#A33D2A">unguarded</text>
+    <g stroke="#66727a" stroke-width="1.2">
+      <line x1="290" y1="207" x2="303" y2="207" marker-end="url(#arr)"/>
+      <line x1="391" y1="207" x2="404" y2="207" marker-end="url(#arr)"/>
+      <line x1="690" y1="207" x2="703" y2="207" marker-end="url(#arr)"/>
+      <line x1="785" y1="207" x2="798" y2="207" marker-end="url(#arr)"/>
+    </g>
+    <text x="150" y="266" font-size="12" font-style="italic" fill="#66727a">Execution became disciplined. Direction and learning collapsed onto one builder&#8217;s vibes.</text>
+
+    <text x="20" y="314" font-size="12" font-weight="700" letter-spacing="1.5" fill="#1E6B4F">03 - WITH THE PRODUCT DESIGN HARNESS</text>
+    <rect x="140" y="330" width="762" height="142" fill="#1E6B4F" opacity="0.06"/>
+    <rect x="140" y="330" width="762" height="142" fill="none" stroke="#1E6B4F" stroke-width="1.6"/>
+    <text x="521" y="324" text-anchor="middle" font-size="10.5" font-weight="700" letter-spacing="1" fill="#1E6B4F">PRODUCT DESIGN HARNESS - DO THE RIGHT THING, END TO END</text>
+    <rect x="158" y="352" width="120" height="44" fill="#ffffff" stroke="#1E6B4F" stroke-width="2"/>
+    <text x="218" y="371" text-anchor="middle" font-size="12.5" fill="#1f2933">Direction</text>
+    <text x="218" y="388" text-anchor="middle" font-size="9.5" fill="#66727a">UX3 REVIEW</text>
+    <text x="218" y="414" text-anchor="middle" font-size="9" letter-spacing="0.5" fill="#9A6B15">BUSINESS FLOW</text>
+    <rect x="300" y="352" width="80" height="44" fill="#ffffff" stroke="#d5cfc2" stroke-width="1.5"/>
+    <text x="340" y="378" text-anchor="middle" font-size="12.5" fill="#1f2933">Spec</text>
+    <text x="340" y="414" text-anchor="middle" font-size="9" letter-spacing="0.5" fill="#9A6B15">BUSINESS: COST</text>
+    <rect x="402" y="352" width="132" height="44" fill="#ffffff" stroke="#d5cfc2" stroke-width="1.5"/>
+    <text x="468" y="378" text-anchor="middle" font-size="12.5" fill="#1f2933">Build &#8646; Test</text>
+    <text x="468" y="414" text-anchor="middle" font-size="9" letter-spacing="0.5" fill="#1f2933">TECH + HUMAN TASTE</text>
+    <rect x="554" y="352" width="82" height="44" fill="#ffffff" stroke="#d5cfc2" stroke-width="1.5"/>
+    <text x="595" y="378" text-anchor="middle" font-size="12.5" fill="#1f2933">Launch</text>
+    <text x="595" y="414" text-anchor="middle" font-size="9" letter-spacing="0.5" fill="#9A6B15">GTM + GROWTH</text>
+    <rect x="656" y="352" width="228" height="44" fill="#ffffff" stroke="#1E6B4F" stroke-width="2"/>
+    <text x="770" y="371" text-anchor="middle" font-size="12.5" fill="#1f2933">User testing &amp; feedback</text>
+    <text x="770" y="388" text-anchor="middle" font-size="9.5" fill="#66727a">UX3 REVIEW</text>
+    <text x="770" y="414" text-anchor="middle" font-size="9" letter-spacing="0.5" fill="#1E6B4F">USER FLOW &#8594; EVIDENCE</text>
+    <g stroke="#66727a" stroke-width="1.2">
+      <line x1="282" y1="366" x2="296" y2="366" marker-end="url(#arr)"/>
+      <line x1="296" y1="382" x2="282" y2="382" marker-end="url(#arr)"/>
+      <line x1="384" y1="366" x2="398" y2="366" marker-end="url(#arr)"/>
+      <line x1="398" y1="382" x2="384" y2="382" marker-end="url(#arr)"/>
+      <line x1="538" y1="374" x2="550" y2="374" marker-end="url(#arr)"/>
+      <line x1="640" y1="374" x2="652" y2="374" marker-end="url(#arr)"/>
+    </g>
+    <path d="M 770 396 C 770 450, 250 450, 222 400" fill="none" stroke="#1E6B4F" stroke-width="1.6" marker-end="url(#arrg)"/>
+    <text x="493" y="492" text-anchor="middle" font-size="12" font-style="italic" fill="#1E6B4F">every stage iterates, every stage reads a flow - and field verdicts feed the next direction review</text>
+  </g>
+</svg>

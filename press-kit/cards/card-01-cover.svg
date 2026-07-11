@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <rect width="1080" height="1080" fill="#FAFAF7"/>
+  <rect x="40" y="40" width="1000" height="1000" fill="none" stroke="#D9DBD4" stroke-width="2"/>
+  <text x="84" y="112" font-family='"SF Mono", Menlo, Consolas, monospace' font-size="26" letter-spacing="5" fill="#1E6B4F">PRODUCT DESIGN HARNESS</text>
+  <text x="996" y="112" text-anchor="end" font-family='"SF Mono", Menlo, Consolas, monospace' font-size="26" letter-spacing="3" fill="#5A615C">01 / 10</text>
+
+  <text x="84" y="420" font-family='Georgia, "Times New Roman", serif' font-size="104" fill="#1A1D1B">Do the right thing</text>
+  <text x="84" y="540" font-family='Georgia, "Times New Roman", serif' font-size="104" font-style="italic" fill="#1A1D1B">&#8212; not just</text>
+  <text x="84" y="660" font-family='Georgia, "Times New Roman", serif' font-size="104" font-style="italic" fill="#1A1D1B">things right.</text>
+  <text x="84" y="756" font-family='-apple-system, "Segoe UI", Helvetica, Arial, sans-serif' font-size="36" fill="#5A615C">A judgment harness for AI-agent teams.</text>
+  <rect x="84" y="800" width="220" height="64" fill="none" stroke="#1E6B4F" stroke-width="3"/><text x="194.0" y="842" text-anchor="middle" font-family='"SF Mono", Menlo, Consolas, monospace' font-size="30" letter-spacing="1" fill="#1E6B4F">continue</text>
+  <rect x="324" y="800" width="170" height="64" fill="none" stroke="#9A6B15" stroke-width="3"/><text x="409.0" y="842" text-anchor="middle" font-family='"SF Mono", Menlo, Consolas, monospace' font-size="30" letter-spacing="1" fill="#9A6B15">verify</text>
+  <rect x="514" y="800" width="290" height="64" fill="none" stroke="#A33D2A" stroke-width="3"/><text x="659.0" y="842" text-anchor="middle" font-family='"SF Mono", Menlo, Consolas, monospace' font-size="30" letter-spacing="1" fill="#A33D2A">stop_reframe</text>
+
+<g transform="translate(84,920) scale(0.72)">
+    <path d="M10 8 V36 Q10 54 26 54 Q42 54 42 36 V8" fill="none" stroke="#1A1D1B" stroke-width="9"/>
+    <path d="M54 8 L82 54 M82 8 L54 54" fill="none" stroke="#1A1D1B" stroke-width="9"/>
+    <rect x="94" y="8" width="26" height="9" fill="#1A1D1B"/>
+    <rect x="102" y="27" width="18" height="9" fill="#1A1D1B"/>
+    <rect x="90" y="46" width="30" height="9" fill="#1A1D1B"/>
+  </g>
+  <text x="996" y="972" text-anchor="end" font-family='"SF Mono", Menlo, Consolas, monospace' font-size="24" fill="#5A615C">github.com/cis2042/product-design-harness</text>
+</svg>

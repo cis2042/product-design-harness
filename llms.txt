@@ -1,0 +1,108 @@
+# UX3 Product Design Harness
+
+> UX3 is an Agentic Design Process with Designer-in-the-Loop judgment. It
+> reviews User, Evidence, and Business flows through six gates and returns one
+> verdict before bounded execution: continue, verify, or stop_reframe.
+
+Canonical website:
+
+- https://cis2042.github.io/product-design-harness/
+
+Expanded machine context and canonical answers:
+
+- llms-full.txt
+- answers.md
+- .well-known/agent-card.json
+
+Canonical contract (every mode returns this):
+
+- schemas/review-result.schema.json
+
+Entry point (selects Quick Gate, Standard Gate, or UX3 Council):
+
+- SKILL.md
+- prompts/start-review.md
+
+Contract-enforced rules (JSON Schema plus scripts/check_review.py, not prose):
+
+- JSON Schema validates output shape, required fields, and conditional branches
+- verdict-specific fields are mutually exclusive; a continue result cannot
+  carry a reframed_question
+- challenge-round fields: forbidden in independent rounds, required in
+  challenge rounds (schemas/reviewer-verdict.schema.json)
+- every stop_reframe lane verdict carries a stop_reason_class
+- actor_boundary.target_population is the single canonical target population
+  source in review results and context packs
+- scripts/check_review.py is required for combined verdict, weakest flow, and
+  headline evidence tier semantics
+- evidence tier bounds the verdict: a t0 headline tier forces stop_reframe,
+  and t1 can never return continue (scripts/check_review.py)
+- may_do and must_not_do cannot share an entry (scripts/check_review.py)
+- a ux3_council review needs at least one challenge with a real objection
+  (scripts/check_review.py)
+- weakest flow: severity, then lowest lane evidence tier, then fixed
+  priority evidence/user/business (docs/CONTRACTS.md)
+- evidence receipts require provenance, freshness, counter-signal, and a
+  tier t0-t4 (schemas/evidence.schema.json)
+- human decisions link both ways via review_id and human_decision_record_id
+  with accountable owner and reversal conditions
+  (schemas/human-decision.schema.json)
+
+Key prompts:
+
+- prompts/start-review.md
+- prompts/mode-selector.md
+- prompts/gate-review.md
+- prompts/ux3-council.md
+
+Agents and integration:
+
+- agents/registry.json
+- adapters/implementation-agent.md
+- docs/ADOPTION.md
+
+Docs:
+
+- docs/HARNESS.md
+- docs/UX3.md
+- docs/OPERATING-PROTOCOL.md
+- docs/CONTRACTS.md
+- docs/COUNCIL.md
+- docs/LIVE-CODING.md
+
+Golden review examples (all validate against the canonical review contract):
+
+- examples/quick-gate-review.json
+- examples/standard-gate-review.json
+- examples/ux3-council-review.json
+
+Live coding golden chain:
+
+- examples/live-coding-product-brief.json
+- examples/live-coding-review.json
+- examples/live-coding-context-pack.json
+
+Verify locally (CI runs the full suite on every push):
+
+- python3 -m venv .venv
+- .venv/bin/python -m pip install -r requirements-dev.txt
+- .venv/bin/python -m unittest discover -s tests
+- .venv/bin/python scripts/validate.py
+- .venv/bin/python scripts/check_review.py examples/quick-gate-review.json
+- .venv/bin/python scripts/check_review.py examples/live-coding-review.json
+
+Operating rules:
+
+- review User Flow, Evidence Flow, and Business Flow
+- use evidence tiers to bound action
+- do not average reviewer verdicts
+- run a challenge round in council mode
+
+UX3 Decision Kernel:
+
+- Validate lane contracts and evidence references
+- Reduce to the worst verdict and deterministic weakest flow
+- Gate uncertainty, risk, reversibility, and human-owned calls
+- Emit one canonical verdict, next action, execution boundary, and stop conditions
+- keep human-owned decisions human-owned
+- create a context pack only after continue

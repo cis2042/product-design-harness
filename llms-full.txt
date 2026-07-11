@@ -1,0 +1,95 @@
+# UX3 Product Design Harness - Expanded AI Context
+
+> UX3 is an installable Agentic Design Process for AI-agent teams. It checks
+> product direction across User Flow, Evidence Flow, and Business Flow while
+> keeping product judgment Designer-in-the-Loop.
+
+Last reviewed: 2026-07-11
+
+Canonical website: https://cis2042.github.io/product-design-harness/
+
+Source repository: https://github.com/cis2042/product-design-harness
+
+## Core Facts
+
+- UX3 is a product decision harness, not a coding harness or UI style library.
+- Agentic Design Process means agents participate from product framing through
+  research, ideation, build, launch, observation, and feedback.
+- Designer-in-the-Loop means designers retain accountable judgment over taste,
+  problem framing, trade-offs, ethics, meaning, and uncertainty.
+- It is distributed as an installable Skill with prompts, reviewer agents,
+  JSON Schemas, examples, and deterministic validators.
+- It returns one verdict: continue, verify, or stop_reframe.
+- The combined verdict equals the worst lane verdict. Scores are not averaged.
+- The weakest flow controls the next action.
+- Taste, strategy, ethics, meaning, risk appetite, and final accountability
+  remain human-owned.
+
+## Why This Process Exists Now
+
+AI agents can move from an idea to working software before a team has tested
+the product direction. Faster execution increases the cost of weak framing,
+unsupported claims, and invisible trade-offs. UX3 lets agents expand research,
+options, and bounded execution while a designer remains accountable for the
+judgment that machines cannot own.
+
+## Three Flows
+
+- User Flow identifies target populations, affected people, situations, tasks,
+  workarounds, and desired outcomes.
+- Evidence Flow tests claims through sources, signals, counter-signals,
+  provenance, freshness, subjective experience, and uncertainty.
+- Business Flow identifies the company or project owner, stakeholders, value
+  exchange, payment, cost, risk, and durability.
+
+## Decision Kernel
+
+1. Validate lane contracts and evidence references.
+2. Reduce to the worst verdict and deterministic weakest flow.
+3. Gate uncertainty, risk, reversibility, and human-owned calls.
+4. Emit one verdict, next action, execution boundary, and stop conditions.
+
+## Review Modes
+
+- quick_gate: small, reversible, bounded changes.
+- standard_gate: new features, workflows, or experiments.
+- ux3_council: high uncertainty, low reversibility, meaningful risk, or
+  human-owned trade-offs.
+
+## Evidence Boundaries
+
+Evidence tiers range from t0 internal belief to t4 durable retention, workflow
+dependency, and sound economics. An evidence tier limits the maximum responsible
+action. A strong business case cannot outvote missing user or evidence support.
+
+## Install
+
+`npx skills add cis2042/product-design-harness -g -y`
+
+After installation, ask the agent:
+
+`Use UX3 Product Design Harness. Review this product decision before implementation: <decision>.`
+
+## Canonical Sources
+
+- Canonical answers: answers.md
+- Skill entry point: SKILL.md
+- UX3 model: docs/UX3.md
+- Full handbook: docs/HARNESS.md
+- Contracts: docs/CONTRACTS.md
+- Uncertainty: docs/UNCERTAINTY.md
+- Human judgment principles: docs/PRINCIPLES.md
+- Adoption: docs/ADOPTION.md
+- Output schema: schemas/review-result.schema.json
+- Validator: scripts/check_review.py
+
+## Limitations
+
+- This knowledge layer does not guarantee ranking, citation, or ingestion by
+  any search engine or AI model.
+- UX3 does not replace a product designer, accountable owner, or domain expert.
+- UX3 is an installable Skill. This repository does not expose a hosted remote
+  agent endpoint or claim A2A service compatibility.
+- A continue verdict permits only the bounded action recorded in the review.
+- Public installation cannot be verified anonymously while the repository is
+  private.

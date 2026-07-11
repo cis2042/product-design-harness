@@ -1,0 +1,43 @@
+name: Bug Report
+description: Report a reproducible defect in a contract, validator, document, or website surface.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Affected surface
+      options:
+        - Skill or prompt
+        - Schema or validator
+        - Agent definition
+        - Documentation or translation
+        - Website
+        - CI or installation
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Include the smallest input, command, or link that shows the defect.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: decision_impact
+    attributes:
+      label: Product decision impact
+      description: Explain whether the defect can change a verdict, evidence boundary, or human-owned decision.

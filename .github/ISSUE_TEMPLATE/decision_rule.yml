@@ -1,0 +1,65 @@
+name: Decision Rule Proposal
+description: Propose a reusable UX3 rule grounded in repeated product failure or field evidence.
+title: "[Rule]: "
+labels:
+  - decision-rule
+  - needs-validation
+body:
+  - type: textarea
+    id: repeated_failure
+    attributes:
+      label: Repeated failure
+      description: What product decision fails repeatedly without this rule?
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_rule
+    attributes:
+      label: Proposed rule
+      description: State one operational constraint, not a general principle.
+    validations:
+      required: true
+  - type: textarea
+    id: trigger
+    attributes:
+      label: Observable trigger
+      description: What condition activates the rule?
+    validations:
+      required: true
+  - type: checkboxes
+    id: flows
+    attributes:
+      label: UX3 mapping
+      options:
+        - label: User Flow
+        - label: Evidence Flow
+        - label: Business Flow
+        - label: Human Judgment Gate
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting evidence
+      description: Link field evidence, pressure cases, or reproducible examples.
+    validations:
+      required: true
+  - type: textarea
+    id: counter_signal
+    attributes:
+      label: Counter-signal
+      description: What would invalidate or narrow the rule?
+    validations:
+      required: true
+  - type: textarea
+    id: human_boundary
+    attributes:
+      label: Human judgment boundary
+      description: What must remain owned by an accountable person?
+    validations:
+      required: true
+  - type: textarea
+    id: stop_condition
+    attributes:
+      label: Stop condition
+      description: When must an agent stop, verify, or reframe?
+    validations:
+      required: true

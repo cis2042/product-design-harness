@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <rect width="1080" height="1080" fill="#FAFAF7"/>
+  <rect x="40" y="40" width="1000" height="1000" fill="none" stroke="#D9DBD4" stroke-width="2"/>
+  <text x="84" y="112" font-family='"SF Mono", Menlo, Consolas, monospace' font-size="26" letter-spacing="5" fill="#1E6B4F">PRODUCT DESIGN HARNESS</text>
+  <text x="996" y="112" text-anchor="end" font-family='"SF Mono", Menlo, Consolas, monospace' font-size="26" letter-spacing="3" fill="#5A615C">06 / 10</text>
+
+  <text x="84" y="300" font-family='Georgia, "Times New Roman", serif' font-size="92" fill="#1A1D1B">The weakest flow</text>
+  <text x="84" y="408" font-family='Georgia, "Times New Roman", serif' font-size="92" fill="#1A1D1B">decides.</text>
+  <text x="84" y="490" font-family='-apple-system, "Segoe UI", Helvetica, Arial, sans-serif' font-size="36" fill="#5A615C">No averaging. A strong business case never</text>
+  <text x="84" y="538" font-family='-apple-system, "Segoe UI", Helvetica, Arial, sans-serif' font-size="36" fill="#5A615C">outvotes missing evidence.</text>
+
+  <rect x="120" y="601" width="180" height="279" fill="#F1F2EC" stroke="#5A615C" stroke-width="2"/>
+  <text x="210" y="920" text-anchor="middle" font-family='"SF Mono", Menlo, Consolas, monospace' font-size="30" fill="#5A615C">user</text>
+  <rect x="420" y="709" width="180" height="171" fill="#F1F2EC" stroke="#A33D2A" stroke-width="4"/>
+  <text x="510" y="920" text-anchor="middle" font-family='"SF Mono", Menlo, Consolas, monospace' font-size="30" fill="#A33D2A">evidence</text>
+  <rect x="720" y="565" width="180" height="315" fill="#F1F2EC" stroke="#5A615C" stroke-width="2"/>
+  <text x="810" y="920" text-anchor="middle" font-family='"SF Mono", Menlo, Consolas, monospace' font-size="30" fill="#5A615C">business</text>
+
+<g transform="translate(84,920) scale(0.72)">
+    <path d="M10 8 V36 Q10 54 26 54 Q42 54 42 36 V8" fill="none" stroke="#1A1D1B" stroke-width="9"/>
+    <path d="M54 8 L82 54 M82 8 L54 54" fill="none" stroke="#1A1D1B" stroke-width="9"/>
+    <rect x="94" y="8" width="26" height="9" fill="#1A1D1B"/>
+    <rect x="102" y="27" width="18" height="9" fill="#1A1D1B"/>
+    <rect x="90" y="46" width="30" height="9" fill="#1A1D1B"/>
+  </g>
+  <text x="996" y="972" text-anchor="end" font-family='"SF Mono", Menlo, Consolas, monospace' font-size="24" fill="#5A615C">github.com/cis2042/product-design-harness</text>
+</svg>

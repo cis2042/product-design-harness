@@ -1,0 +1,94 @@
+name: Field Evidence
+description: Submit a real product decision, intervention, and observed result.
+title: "[Evidence]: "
+labels:
+  - evidence
+  - needs-validation
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Submit decision evidence, not a product showcase. Remove private data and unsupported claims.
+  - type: dropdown
+    id: stage
+    attributes:
+      label: Product stage
+      options:
+        - Idea
+        - Prototype
+        - MVP
+        - Launch
+        - Scale
+        - Retrospective
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Decision context
+      description: Product, affected population, constraints, and why the decision mattered.
+    validations:
+      required: true
+  - type: textarea
+    id: before
+    attributes:
+      label: Decision before UX3
+      description: What direction would the team or agent have taken without this review?
+    validations:
+      required: true
+  - type: textarea
+    id: user_flow
+    attributes:
+      label: User Flow observation
+      description: Target population, affected people, behavior, subjective experience, and excluded groups.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence_flow
+    attributes:
+      label: Evidence Flow observation
+      description: Source, signal, interpretation, provenance, and freshness.
+    validations:
+      required: true
+  - type: textarea
+    id: business_flow
+    attributes:
+      label: Business Flow observation
+      description: Value exchange, payer, owner, operating cost, externality, and durability.
+    validations:
+      required: true
+  - type: textarea
+    id: counter_signal
+    attributes:
+      label: Counter-signal
+      description: What evidence weakens or could reverse the conclusion?
+    validations:
+      required: true
+  - type: textarea
+    id: human_judgment
+    attributes:
+      label: Human judgment
+      description: Accountable role, taste or strategy trade-off, rationale, and reversal condition.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Observed outcome
+      description: What happened, over what measurement window, and how the next decision changed.
+    validations:
+      required: true
+  - type: textarea
+    id: limitations
+    attributes:
+      label: Limitations
+      description: Sample limits, uncertainty, missing evidence, and what this case cannot prove.
+    validations:
+      required: true
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Consent and redaction
+      options:
+        - label: I have the right to publish this material and removed private or identifying data.
+          required: true

@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UX3 Product Design Harness | Agentic Design Process</title>
+<meta name="description" content="An Agentic Design Process with Designer-in-the-Loop judgment. UX3 helps AI-agent teams review User, Evidence, and Business flows before execution.">
+<meta name="audience" content="Product designers, product builders, founders, and AI agents">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://cis2042.github.io/product-design-harness/">
+<link rel="alternate" type="text/plain" href="llms.txt" title="UX3 concise AI context">
+<link rel="alternate" type="text/markdown" href="answers.md" title="UX3 canonical answers">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cis2042.github.io/product-design-harness/">
+<meta property="og:title" content="UX3 Product Design Harness">
+<meta property="og:description" content="An Agentic Design Process with Designer-in-the-Loop judgment across User, Evidence, and Business flows.">
+<meta property="og:image" content="https://cis2042.github.io/product-design-harness/assets/product-design-harness-cover.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="UX3 Product Design Harness">
+<meta name="twitter:description" content="An Agentic Design Process with Designer-in-the-Loop judgment across User, Evidence, and Business flows.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20x='6'%20y='5'%20width='22'%20height='6'/%3E%3Crect%20x='13'%20y='13'%20width='15'%20height='6'/%3E%3Crect%20x='3'%20y='21'%20width='25'%20height='6'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://cis2042.github.io/product-design-harness/#website",
+      "url": "https://cis2042.github.io/product-design-harness/",
+      "name": "UX3 Product Design Harness",
+      "description": "An Agentic Design Process with Designer-in-the-Loop judgment across User Flow, Evidence Flow, and Business Flow.",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://cis2042.github.io/product-design-harness/#software",
+      "name": "UX3 Product Design Harness",
+      "description": "An installable Agentic Design Process that keeps product taste, trade-offs, and accountability Designer-in-the-Loop.",
+      "codeRepository": "https://github.com/cis2042/product-design-harness",
+      "license": "https://opensource.org/license/mit",
+      "programmingLanguage": ["Markdown", "JSON Schema", "Python"],
+      "runtimePlatform": "AI agent skill hosts",
+      "isAccessibleForFree": true
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://cis2042.github.io/product-design-harness/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the UX3 Product Design Harness?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "UX3 Product Design Harness is an open, installable product judgment protocol for AI-agent teams. Before design or implementation, it reviews a decision across User Flow, Evidence Flow, and Business Flow, then returns one contract-validated verdict."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is UX3 different from a coding harness?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A coding harness checks whether software is built correctly. UX3 checks whether the team should build the proposed direction, what evidence supports it, who receives and pays for value, and where human judgment must remain accountable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When should an agent invoke UX3?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Invoke UX3 before a new or materially changed product direction, feature, workflow, experiment, or costly irreversible commitment. Skip it for purely mechanical execution that already has an approved boundary and valid context pack."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the three UX3 flows?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "User Flow identifies target populations, affected people, situations, tasks, and desired outcomes. Evidence Flow tests claims with sources, signals, counter-signals, and uncertainty. Business Flow identifies owners, stakeholders, value exchange, costs, and durability."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What verdicts can UX3 return?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "UX3 returns continue, verify, or stop_reframe. Continue permits bounded execution, verify requires specified evidence before proceeding, and stop_reframe rejects the current framing and requires a better product question."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does UX3 handle evidence and uncertainty?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evidence is graded from untraceable belief to durable behavioral and economic proof. UX3 records provenance, freshness, counter-signals, and uncertainty, then lets the weakest flow and worst verdict control the next action instead of averaging scores."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What decisions must remain human-owned?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Taste, strategy, ethics, meaning, risk appetite, and final accountability remain human-owned. An agent may analyze options and evidence, but an accountable person records the decision, rationale, owner, and reversal conditions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does an agent install and use UX3?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Install UX3 with npx skills add cis2042/product-design-harness -g -y. Ask the agent to review a product decision before implementation; the skill selects Quick Gate, Standard Gate, or UX3 Council and emits the canonical review contract."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is an Agentic Design Process?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An Agentic Design Process treats AI agents as active participants across product framing, research, ideation, prototyping, build, launch, and feedback. UX3 gives those participants stage gates, evidence duties, execution boundaries, and one shared review contract."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does Designer-in-the-Loop mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Designer-in-the-Loop means a designer remains accountable for taste, problem framing, trade-offs, ethics, meaning, and uncertainty while agents explore options, retrieve evidence, and execute bounded work. It is a decision role, not approval of every small task."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+  :root {
+    --paper: #FAFAF7;
+    --ink: #1A1D1B;
+    --muted: #5A615C;
+    --line: #D9DBD4;
+    --panel: #F1F2EC;
+    --accent: #1E6B4F;
+    --accent-ink: #FFFFFF;
+    --verify: #9A6B15;
+    --stop: #A33D2A;
+    --code-bg: #14201A;
+    --code-ink: #C9D6CD;
+    --code-accent: #6FC29B;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #141613;
+      --ink: #E6E9E3;
+      --muted: #9AA39C;
+      --line: #2C302B;
+      --panel: #1B1E1A;
+      --accent: #4DAF87;
+      --accent-ink: #0E1511;
+      --verify: #D4A24C;
+      --stop: #D97659;
+      --code-bg: #0E1511;
+      --code-ink: #C9D6CD;
+      --code-accent: #6FC29B;
+    }
+  }
+  :root[data-theme="light"] {
+    --paper: #FAFAF7; --ink: #1A1D1B; --muted: #5A615C; --line: #D9DBD4;
+    --panel: #F1F2EC; --accent: #1E6B4F; --accent-ink: #FFFFFF;
+    --verify: #9A6B15; --stop: #A33D2A;
+    --code-bg: #14201A; --code-ink: #C9D6CD; --code-accent: #6FC29B;
+  }
+  :root[data-theme="dark"] {
+    --paper: #141613; --ink: #E6E9E3; --muted: #9AA39C; --line: #2C302B;
+    --panel: #1B1E1A; --accent: #4DAF87; --accent-ink: #0E1511;
+    --verify: #D4A24C; --stop: #D97659;
+    --code-bg: #0E1511; --code-ink: #C9D6CD; --code-accent: #6FC29B;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation: none !important; transition: none !important; }
+  }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.6; -webkit-font-smoothing: antialiased;
+  }
+  .serif { font-family: Georgia, "Iowan Old Style", "Times New Roman", serif; }
+  .mono, code, pre { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+  }
+
+  .topbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 14px 24px; border-bottom: 1px solid var(--line);
+    position: sticky; top: 0; background: var(--paper); z-index: 10;
+  }
+  .topbar .brand { display: flex; align-items: center; gap: 10px; }
+  .brand-logo {
+    display: block; position: relative; flex: 0 0 68px;
+    width: 68px; height: 30px; overflow: hidden;
+  }
+  .brand-logo img {
+    position: absolute; width: 76px; height: 76px; max-width: none;
+    left: -4px; top: -23px; filter: brightness(1.06); mix-blend-mode: multiply;
+  }
+  @media (prefers-color-scheme: dark) {
+    .brand-logo img { filter: invert(1); mix-blend-mode: screen; }
+  }
+  :root[data-theme="light"] .brand-logo img { filter: brightness(1.06); mix-blend-mode: multiply; }
+  :root[data-theme="dark"] .brand-logo img { filter: invert(1); mix-blend-mode: screen; }
+  .topbar .name { font-size: 14px; font-weight: 700; letter-spacing: 0.04em; }
+  .topbar .name .slash { color: var(--accent); }
+  .topbar nav { display: flex; align-items: center; gap: 18px; font-size: 13px; }
+  a.github-icon {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 28px; height: 28px; color: var(--ink);
+  }
+  a.github-icon:hover { color: var(--accent); text-decoration: none; }
+  a.github-icon svg { width: 18px; height: 18px; }
+  @media (max-width: 560px) {
+    .topbar { padding: 12px 14px; gap: 12px; }
+    .topbar .product-name { display: none; }
+    .topbar .slash { display: none; }
+    .topbar nav { gap: 10px; font-size: 12px; }
+    .topbar nav a { white-space: nowrap; }
+  }
+
+  /* ---------- Motion (killed globally by prefers-reduced-motion) ---------- */
+  @keyframes fadeUp { from { transform: translateY(14px); } to { transform: none; } }
+  @keyframes stampIn { from { transform: translateY(6px); } to { transform: none; } }
+  .anim { animation: fadeUp 0.6s ease backwards; }
+  .d2 { animation-delay: 0.08s; }
+  .d3 { animation-delay: 0.18s; }
+  .d4 { animation-delay: 0.28s; }
+  .stamp { animation: stampIn 0.35s cubic-bezier(0.2, 1.4, 0.4, 1) backwards; }
+  .s1 { animation-delay: 0.5s; }
+  .s2 { animation-delay: 0.68s; }
+  .s3 { animation-delay: 0.86s; }
+  .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .js .reveal.in { opacity: 1; transform: none; }
+
+  /* ---------- Hero: two doors ---------- */
+  .hero { border-bottom: 1px solid var(--line); }
+  .hero-head { max-width: 880px; margin: 0 auto; padding: 72px 24px 40px; text-align: center; }
+  .star-row { margin-top: 22px; min-height: 30px; }
+  a.ghstar {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 13px; font-weight: 600; color: var(--ink);
+    border: 1.5px solid var(--line); padding: 6px 16px; background: var(--panel);
+  }
+  a.ghstar:hover { text-decoration: none; border-color: var(--accent); color: var(--accent); }
+  a.ghstar .glyph { color: var(--verify); }
+  a.ghstar.sm { padding: 3px 10px; font-size: 12px; }
+  .star-count { display: none; }
+  .star-count.show {
+    display: inline-block; border-left: 1.5px solid var(--line);
+    padding-left: 9px; margin-left: 3px; font-variant-numeric: tabular-nums;
+  }
+  .hero-head h1 {
+    font-size: clamp(42px, 8vw, 84px); line-height: 1.04; margin: 0 0 18px;
+    letter-spacing: -0.02em; text-wrap: balance;
+  }
+  .hero-context {
+    margin: 0 0 14px; color: var(--accent); font-size: 12px; font-weight: 700;
+    letter-spacing: 0; text-transform: uppercase;
+  }
+  .hero-head p.tagline {
+    font-style: italic; font-size: clamp(19px, 2.6vw, 26px); margin: 0 0 14px;
+  }
+  .hero-head p.sub { color: var(--muted); font-size: clamp(15px, 2vw, 18px); max-width: 56ch; margin: 0 auto; }
+  .verdict-row { display: flex; gap: 10px; justify-content: center; margin-top: 26px; flex-wrap: wrap; }
+  .entry-rails {
+    width: 100%; margin: 26px 0 8px; padding: 22px 0 10px;
+    display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 24px;
+    align-items: start;
+    border-top: 1px solid #3B4A41; border-bottom: 1px solid #3B4A41;
+  }
+  .entry-rail {
+    min-width: 0; padding-top: 18px; border-top: 1px solid var(--line);
+  }
+  .entry-label {
+    margin: 0 0 8px; color: var(--muted); font-size: 12px; letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .language-nav {
+    display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center;
+    font-size: 14px; line-height: 1.5;
+  }
+  .language-nav a { white-space: nowrap; }
+  .work-copy { margin: 0; max-width: 52ch; color: var(--muted); font-size: 14px; }
+  .work-tools { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .work-chip {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 60px; padding: 7px 12px; border: 1px solid var(--line);
+    background: transparent; color: var(--ink); cursor: pointer; font-size: 12px;
+    letter-spacing: 0.04em;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  .work-chip:hover { border-color: var(--accent); color: var(--accent); }
+  .work-chip:focus-visible { background: var(--panel); }
+  .work-feedback {
+    min-height: 20px; margin: 10px 0 0; color: var(--muted); font-size: 12.5px;
+  }
+  .work-feedback strong { color: var(--ink); font-weight: 600; }
+  @media (max-width: 760px) {
+    .entry-rails { grid-template-columns: 1fr; gap: 18px; padding: 20px 0; }
+  }
+
+  /* ---------- Process comparison diagram ---------- */
+  .compare { border-bottom: 1px solid var(--line); }
+  .compare .inner { max-width: 980px; margin: 0 auto; padding: 56px 24px 40px; }
+  .diagramwrap { overflow-x: auto; margin-top: 26px; }
+  .diagram { min-width: 860px; width: 100%; display: block; }
+  .diagram text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .diagram .rowlab { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; letter-spacing: 0.12em; fill: var(--muted); }
+  .diagram .rowlab.on { fill: var(--accent); }
+  .diagram .box { fill: var(--paper); stroke: var(--line); stroke-width: 1.5; }
+  .diagram .box.warn { fill: none; stroke: var(--stop); stroke-dasharray: 5 4; }
+  .diagram .box.ok { stroke: var(--accent); stroke-width: 2; }
+  .diagram .boxlab { font-size: 12.5px; fill: var(--ink); }
+  .diagram .rolelab { font-size: 9.5px; fill: var(--muted); letter-spacing: 0.04em; }
+  .diagram .warnlab { font-size: 10px; fill: var(--stop); font-style: italic; }
+  .diagram .bandlab { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 10.5px; letter-spacing: 0.08em; }
+  .diagram .cap { font-size: 12px; fill: var(--muted); font-style: italic; }
+  .diagram .tag { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 9px; letter-spacing: 0.06em; }
+  .diagram .flowline { stroke: var(--muted); stroke-width: 1.2; }
+  .diagram .loop { stroke: var(--accent); stroke-width: 1.6; fill: none; }
+  .chip {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 12px;
+    padding: 5px 12px; border: 1.5px solid; letter-spacing: 0.05em;
+  }
+  .chip.c { color: var(--accent); border-color: var(--accent); }
+  .chip.v { color: var(--verify); border-color: var(--verify); }
+  .chip.s { color: var(--stop); border-color: var(--stop); }
+
+  .doors { display: grid; grid-template-columns: 0.88fr 1.12fr; border-top: 1px solid var(--line); }
+  @media (max-width: 760px) { .doors { grid-template-columns: 1fr; } }
+  .door-panel {
+    min-width: 0; padding: 44px 36px 40px; position: relative;
+  }
+  .door-panel + .door-panel { border-left: 1px solid var(--line); }
+  .door.human { display: block; color: inherit; background: var(--panel); }
+  .door.machine { background: var(--code-bg); color: var(--code-ink); }
+  @media (max-width: 760px) {
+    .door-panel + .door-panel { border-left: none; border-top: 1px solid var(--line); }
+  }
+  .door-panel .eyebrow {
+    display: flex; align-items: center; gap: 11px; margin-bottom: 16px;
+    font-size: 18px; font-weight: 800; line-height: 1.2;
+    letter-spacing: 0;
+  }
+  .door-panel .eyebrow::before { content: ""; width: 4px; height: 22px; background: var(--accent); }
+  .door.human .eyebrow { font-family: Georgia, "Iowan Old Style", serif; }
+  .door.machine .eyebrow { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 17px; color: var(--code-accent); }
+  .door.machine .eyebrow::before { background: var(--verify); }
+  .door-panel h2 { margin: 0 0 10px; font-size: clamp(22px, 3vw, 30px); line-height: 1.2; letter-spacing: 0; }
+  .door.human h2 { font-family: Georgia, "Iowan Old Style", serif; font-weight: 500; }
+  .door.machine h2 { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-weight: 600; font-size: clamp(20px, 2.6vw, 26px); color: #F5F8F6; }
+  .door-panel p { max-width: 48ch; font-size: 15px; margin: 0 0 22px; }
+  .door.human p { color: var(--muted); }
+  .door.machine p { color: #AEBBB3; }
+  .door-panel .go {
+    display: inline-block; font-size: 13.5px; font-weight: 600;
+    color: var(--accent); border: 1.5px solid var(--accent); padding: 9px 18px;
+  }
+  .door.human:hover { text-decoration: none; }
+  .door.human:hover .go { background: var(--accent); color: var(--accent-ink); }
+  .machine-console { margin-top: 22px; border-top: 1px solid #3B4A41; padding-top: 16px; }
+  .install-label {
+    display: block; margin-bottom: 7px; color: #8FA097; font: 11px/1.4 ui-monospace, "SF Mono", Menlo, monospace;
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .cli-terminal {
+    border: 1px solid #52645A; background: #0D1511; box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
+  }
+  .cli-titlebar {
+    display: flex; align-items: center; gap: 9px; min-height: 32px; padding: 0 12px;
+    border-bottom: 1px solid #3B4A41; color: #8FA097;
+    font: 10px/1 ui-monospace, "SF Mono", Menlo, monospace; letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .cli-lights { display: inline-flex; gap: 5px; margin-right: 3px; }
+  .cli-lights i { display: block; width: 7px; height: 7px; border-radius: 50%; background: #52645A; }
+  .install-command {
+    display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: stretch;
+    background: #0D1511;
+  }
+  .cli-line { display: flex; min-width: 0; align-items: flex-start; padding: 14px; }
+  .cli-prompt { flex: 0 0 auto; margin-right: 9px; color: var(--code-accent); font: 700 13px/1.55 ui-monospace, "SF Mono", Menlo, monospace; }
+  .install-command code {
+    min-width: 0; color: #E2EAE5; font-size: 12.5px;
+    line-height: 1.55; overflow-wrap: anywhere;
+  }
+  .install-copy {
+    width: 42px; border: 0; border-left: 1px solid #52645A; background: transparent;
+    color: var(--code-accent); cursor: pointer; font: 18px/1 ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  .install-copy:hover, .install-copy.done { background: var(--code-accent); color: #0D1511; }
+  .machine-note { margin-top: 11px; color: #8FA097; font-size: 12px; }
+  .machine-note a { color: var(--code-accent); }
+
+  /* ---------- Sections ---------- */
+  .section { max-width: 880px; margin: 0 auto; padding: 64px 24px; }
+  .section + .section { border-top: 1px solid var(--line); }
+  .kicker {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
+  }
+  h2.title { font-size: clamp(24px, 3.4vw, 34px); margin: 0 0 8px; letter-spacing: -0.01em; text-wrap: balance; }
+  .human-zone h2.title, .human-zone h3 { font-family: Georgia, "Iowan Old Style", serif; font-weight: 500; }
+  .lede { color: var(--muted); font-size: 16.5px; max-width: 62ch; margin: 0 0 34px; }
+  .prose { max-width: 65ch; }
+  .prose p { margin: 0 0 16px; font-size: 16px; }
+  h3 { font-size: 19px; margin: 34px 0 10px; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 14.5px; margin: 14px 0 6px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  .tablewrap { overflow-x: auto; }
+  td code { font-size: 13px; background: var(--panel); padding: 1px 6px; }
+
+  .flows { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 22px; }
+  @media (max-width: 700px) { .flows { grid-template-columns: 1fr; } }
+  .flow { border: 1px solid var(--line); padding: 20px 18px; background: var(--panel); }
+  .flow b { display: block; font-size: 16px; margin-bottom: 6px; }
+  .flow span { color: var(--muted); font-size: 14px; }
+
+  .ux3-figure { margin: 42px 0 0; }
+  .ux3-figure img { display: block; width: 100%; height: auto; }
+  .ux3-figure figcaption { color: var(--muted); font-size: 13px; margin-top: 10px; }
+  .kernel-steps {
+    display: grid; grid-template-columns: repeat(4, 1fr); margin: 22px 0 0;
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  }
+  @media (max-width: 700px) { .kernel-steps { grid-template-columns: 1fr; } }
+  .kernel-step { padding: 15px 14px; }
+  .kernel-step + .kernel-step { border-left: 1px solid var(--line); }
+  @media (max-width: 700px) {
+    .kernel-step + .kernel-step { border-left: none; border-top: 1px solid var(--line); }
+  }
+  .kernel-step small {
+    display: block; color: var(--accent); font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 10px; letter-spacing: 0; margin-bottom: 4px;
+  }
+  .kernel-step b { display: block; font-size: 14px; margin-bottom: 3px; }
+  .kernel-step span { color: var(--muted); font-size: 12.5px; }
+
+  .gates { counter-reset: gate; list-style: none; margin: 22px 0 0; padding: 0; }
+  .gates li {
+    counter-increment: gate; display: flex; gap: 16px; align-items: baseline;
+    padding: 13px 4px; border-bottom: 1px solid var(--line);
+  }
+  .gates li::before {
+    content: counter(gate, decimal-leading-zero);
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    color: var(--accent); font-size: 13px; min-width: 26px;
+  }
+  .gates b { font-size: 15px; }
+  .gates span { color: var(--muted); font-size: 14px; }
+
+  .tiers { margin: 22px 0 0; }
+  .tier { display: flex; gap: 14px; align-items: baseline; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 14.5px; }
+  .tier code { min-width: 34px; color: var(--accent); background: none; padding: 0; font-weight: 700; }
+  .tier .max { color: var(--muted); margin-left: auto; text-align: right; font-size: 13px; }
+
+  .faq-list { margin-top: 24px; border-top: 1px solid var(--line); }
+  .faq-item { border-bottom: 1px solid var(--line); }
+  .faq-item summary {
+    position: relative; padding: 18px 42px 18px 0; cursor: pointer;
+    list-style: none; font-family: Georgia, "Iowan Old Style", serif;
+    font-size: 18px; font-weight: 500; line-height: 1.4;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: "+"; position: absolute; right: 4px; top: 16px;
+    color: var(--accent); font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 20px; font-weight: 400;
+  }
+  .faq-item[open] summary::after { content: "-"; }
+  .faq-item p { max-width: 68ch; margin: 0 0 10px; color: var(--muted); font-size: 15px; }
+  .faq-source { display: inline-block; margin: 0 0 18px; font-size: 12.5px; }
+  .knowledge-note {
+    display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap;
+    margin-top: 24px; padding-top: 14px; border-top: 1px solid var(--line);
+    color: var(--muted); font-size: 12px;
+  }
+
+  /* ---------- Machine zone ---------- */
+  .machine-zone { background: var(--code-bg); color: var(--code-ink); border-top: 1px solid #3B4A41; }
+  .machine-zone .section + .section { border-color: #3B4A41; }
+  .machine-zone .kicker, .machine-zone a { color: var(--code-accent); }
+  .machine-zone h2.title, .machine-zone h3 { color: #F5F8F6; font-family: ui-monospace, "SF Mono", Menlo, monospace; letter-spacing: 0; }
+  .machine-zone .lede, .machine-zone .work-copy, .machine-zone .entry-label,
+  .machine-zone th { color: #AEBBB3; }
+  .machine-zone th, .machine-zone td { border-color: #3B4A41; }
+  .machine-zone td code { background: #0D1511; color: #E2EAE5; }
+  .machine-zone .work-chip { border-color: #52645A; color: var(--code-ink); }
+  .machine-zone .work-chip:hover { border-color: var(--code-accent); color: var(--code-accent); }
+  .machine-zone .work-feedback { color: #8FA097; }
+  .codewrap { position: relative; margin: 14px 0; }
+  .codewrap pre { margin: 0; }
+  pre {
+    background: var(--code-bg); color: var(--code-ink); font-size: 13.5px; line-height: 1.65;
+    padding: 18px 20px; overflow-x: auto; margin: 14px 0; border: 1px solid var(--line);
+  }
+  .copybtn {
+    position: absolute; top: 8px; right: 8px;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px;
+    letter-spacing: 0.06em; cursor: pointer;
+    color: var(--code-ink); background: var(--code-bg);
+    border: 1px solid var(--code-ink); opacity: 0.55; padding: 4px 10px;
+  }
+  .copybtn:hover { opacity: 1; }
+  .copybtn.done { color: var(--code-accent); border-color: var(--code-accent); opacity: 1; }
+  pre .c { color: var(--code-accent); }
+  pre .dim { opacity: 0.55; }
+  .steps { list-style: none; counter-reset: step; margin: 20px 0 0; padding: 0; }
+  .steps li { counter-increment: step; margin-bottom: 22px; }
+  .steps li > b {
+    display: block; font-size: 14px; margin-bottom: 6px;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  .steps li > b::before { content: counter(step) ". "; color: var(--accent); }
+
+  footer {
+    border-top: 1px solid var(--line); padding: 28px 24px; text-align: center;
+    color: var(--muted); font-size: 13px;
+  }
+  footer .author {
+    display: flex; gap: 14px; align-items: center; justify-content: center; margin-top: 12px;
+  }
+  footer .author span { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; }
+  footer .author a { color: var(--muted); display: inline-flex; }
+  footer .author a:hover { color: var(--accent); }
+  .totop { display: inline-block; margin-top: 6px; font-size: 12.5px; }
+</style>
+</head>
+<body id="top">
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-logo"><img src="assets/ux3-logo.jpeg" alt="UX3"></span>
+    <div class="name mono"><span class="slash">/</span> <span class="product-name">Product Design Harness</span></div>
+  </div>
+  <nav>
+    <a href="#for-humans">For humans</a>
+    <a href="#for-agents">For agents</a>
+    <a class="github-icon" href="https://github.com/cis2042/product-design-harness"
+       aria-label="Open cis2042/product-design-harness on GitHub" title="Open repository on GitHub">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+    </a>
+    <a class="ghstar sm" href="https://github.com/cis2042/product-design-harness"
+       aria-label="Star cis2042/product-design-harness on GitHub">
+      <span class="glyph">&#9733;</span> Star<span class="star-count"></span>
+    </a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-head">
+    <p class="hero-context mono anim d2">Agentic Design Process / Designer-in-the-Loop</p>
+    <h1 class="serif anim d2">Product Design<br>Harness</h1>
+    <p class="tagline serif anim d3">Do the right thing &mdash; not just things right.</p>
+    <p class="sub anim d4">AI agents now join product design from framing through feedback.
+    UX3 gives that collaboration a decision process: agents expand exploration, evidence,
+    and execution; designers own taste, trade-offs, and accountable judgment.</p>
+    <div class="verdict-row" aria-label="The three verdicts">
+      <span class="chip c stamp s1">continue</span>
+      <span class="chip v stamp s2">verify</span>
+      <span class="chip s stamp s3">stop_reframe</span>
+    </div>
+    <div class="star-row anim d4">
+      <a class="ghstar" href="https://github.com/cis2042/product-design-harness"
+         aria-label="Star cis2042/product-design-harness on GitHub">
+        <span class="glyph">&#9733;</span> Star on GitHub<span class="star-count"></span>
+      </a>
+    </div>
+  </div>
+  <div class="doors">
+    <a class="door-panel human door" href="#for-humans">
+      <div class="eyebrow">For Humans</div>
+      <h2>The thinking behind the harness</h2>
+      <p>Why agents need decision discipline, how the three flows and six gates work,
+      and a map of every chapter in the handbook.</p>
+      <span class="go">Read the philosophy &#8594;</span>
+    </a>
+    <div class="door-panel machine door">
+      <div class="eyebrow">For Agents</div>
+      <h2>Install for agent</h2>
+      <p>Add the UX3 judgment layer to the agents already working in your product repository.</p>
+      <div class="machine-console">
+        <span class="install-label">Public install</span>
+        <div class="cli-terminal" role="group" aria-label="Agent CLI installer">
+          <div class="cli-titlebar"><span class="cli-lights" aria-hidden="true"><i></i><i></i><i></i></span>ux3 / agent shell</div>
+          <div class="install-command">
+            <div class="cli-line"><span class="cli-prompt" aria-hidden="true">$</span><code>npx skills add cis2042/product-design-harness -g -y</code></div>
+            <button class="install-copy" type="button" data-copy-install="public"
+              data-copy="npx skills add cis2042/product-design-harness -g -y"
+              aria-label="Copy public agent install command" title="Copy install command">&#10697;</button>
+          </div>
+        </div>
+        <div class="machine-note">Private repository? Use the authenticated SSH command in
+          <a href="#install-agent">Install for AI agents &#8594;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS COMPARISON ================= -->
+<section class="compare" aria-labelledby="compare-title">
+  <div class="inner">
+    <div class="kicker">Where it sits</div>
+    <h2 class="title serif" id="compare-title">Coding harnesses guard the how. Nothing guarded the why &mdash; or the after.</h2>
+    <p class="lede">Three eras of the product process. The harness is not a phase before
+    building; it is the judgment layer that runs across the whole loop.</p>
+    <div class="diagramwrap">
+      <svg class="diagram" viewBox="0 0 920 508" role="img"
+           aria-label="Three rows compare the traditional product process, the AI-assisted process guarded only by a coding harness, and the full loop guarded by the Product Design Harness.">
+        <defs>
+          <marker id="arr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0 0 L8 4 L0 8 Z" fill="var(--muted)"/>
+          </marker>
+          <marker id="arrg" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0 0 L8 4 L0 8 Z" fill="var(--accent)"/>
+          </marker>
+        </defs>
+
+        <!-- Row 1: traditional -->
+        <text class="rowlab" x="20" y="32">01 &mdash; TRADITIONAL PRODUCT TEAM</text>
+        <g>
+          <text class="rolelab" x="205" y="56" text-anchor="middle">PM + RESEARCHER</text>
+          <text class="rolelab" x="330" y="56" text-anchor="middle">PM</text>
+          <text class="rolelab" x="455" y="56" text-anchor="middle">DESIGNER</text>
+          <text class="rolelab" x="580" y="56" text-anchor="middle">ENGINEER</text>
+          <text class="rolelab" x="705" y="56" text-anchor="middle">QA</text>
+          <text class="rolelab" x="830" y="56" text-anchor="middle">WHOLE TEAM</text>
+          <rect class="box" x="150" y="64" width="110" height="34"/><text class="boxlab" x="205" y="86" text-anchor="middle">Research</text>
+          <rect class="box" x="275" y="64" width="110" height="34"/><text class="boxlab" x="330" y="86" text-anchor="middle">Spec</text>
+          <rect class="box" x="400" y="64" width="110" height="34"/><text class="boxlab" x="455" y="86" text-anchor="middle">Design</text>
+          <rect class="box" x="525" y="64" width="110" height="34"/><text class="boxlab" x="580" y="86" text-anchor="middle">Build</text>
+          <rect class="box" x="650" y="64" width="110" height="34"/><text class="boxlab" x="705" y="86" text-anchor="middle">Test</text>
+          <rect class="box" x="775" y="64" width="110" height="34"/><text class="boxlab" x="830" y="86" text-anchor="middle">Ship</text>
+          <line class="flowline" x1="260" y1="81" x2="273" y2="81" marker-end="url(#arr)"/>
+          <line class="flowline" x1="385" y1="81" x2="398" y2="81" marker-end="url(#arr)"/>
+          <line class="flowline" x1="510" y1="81" x2="523" y2="81" marker-end="url(#arr)"/>
+          <line class="flowline" x1="635" y1="81" x2="648" y2="81" marker-end="url(#arr)"/>
+          <line class="flowline" x1="760" y1="81" x2="773" y2="81" marker-end="url(#arr)"/>
+        </g>
+        <text class="cap" x="150" y="124">Taste and value alignment lives in many human roles, at every step.</text>
+
+        <!-- Row 2: AI-assisted, coding harness only -->
+        <text class="rowlab" x="20" y="172">02 &mdash; AI-ASSISTED, CODING HARNESS ONLY</text>
+        <g>
+          <rect class="box warn" x="150" y="190" width="140" height="34"/>
+          <text class="boxlab" x="220" y="212" text-anchor="middle">Why build this?</text>
+          <text class="warnlab" x="220" y="240" text-anchor="middle">unguarded</text>
+          <rect class="box" x="305" y="190" width="86" height="34"/><text class="boxlab" x="348" y="212" text-anchor="middle">Spec</text>
+          <text class="bandlab" x="548" y="182" text-anchor="middle" fill="var(--muted)">CODING HARNESS &mdash; DO THINGS RIGHT</text>
+          <rect class="box" x="406" y="190" width="284" height="34"/>
+          <text class="boxlab" x="548" y="212" text-anchor="middle">Build &#8646; Test &#8646; Iterate</text>
+          <rect class="box" x="705" y="190" width="80" height="34"/><text class="boxlab" x="745" y="212" text-anchor="middle">Ship</text>
+          <rect class="box warn" x="800" y="190" width="100" height="34"/>
+          <text class="boxlab" x="850" y="212" text-anchor="middle">Feedback</text>
+          <text class="warnlab" x="850" y="240" text-anchor="middle">unguarded</text>
+          <line class="flowline" x1="290" y1="207" x2="303" y2="207" marker-end="url(#arr)"/>
+          <line class="flowline" x1="391" y1="207" x2="404" y2="207" marker-end="url(#arr)"/>
+          <line class="flowline" x1="690" y1="207" x2="703" y2="207" marker-end="url(#arr)"/>
+          <line class="flowline" x1="785" y1="207" x2="798" y2="207" marker-end="url(#arr)"/>
+        </g>
+        <text class="cap" x="150" y="266">Execution became disciplined. Direction and learning collapsed onto one builder&rsquo;s vibes.</text>
+
+        <!-- Row 3: with the Product Design Harness -->
+        <text class="rowlab on" x="20" y="314">03 &mdash; WITH THE PRODUCT DESIGN HARNESS</text>
+        <g>
+          <rect x="140" y="330" width="762" height="142" fill="var(--accent)" opacity="0.06"/>
+          <rect x="140" y="330" width="762" height="142" fill="none" stroke="var(--accent)" stroke-width="1.6"/>
+          <text class="bandlab" x="521" y="324" text-anchor="middle" fill="var(--accent)">PRODUCT DESIGN HARNESS &mdash; DO THE RIGHT THING, END TO END</text>
+
+          <rect class="box ok" x="158" y="352" width="120" height="44"/>
+          <text class="boxlab" x="218" y="371" text-anchor="middle">Direction</text>
+          <text class="rolelab" x="218" y="388" text-anchor="middle">UX3 REVIEW</text>
+          <text class="tag" x="218" y="414" text-anchor="middle" fill="var(--verify)">BUSINESS FLOW</text>
+
+          <rect class="box" x="300" y="352" width="80" height="44"/>
+          <text class="boxlab" x="340" y="378" text-anchor="middle">Spec</text>
+          <text class="tag" x="340" y="414" text-anchor="middle" fill="var(--verify)">BUSINESS: COST</text>
+
+          <rect class="box" x="402" y="352" width="132" height="44"/>
+          <text class="boxlab" x="468" y="378" text-anchor="middle">Build &#8646; Test</text>
+          <text class="tag" x="468" y="414" text-anchor="middle" fill="var(--ink)">TECH + HUMAN TASTE</text>
+
+          <rect class="box" x="554" y="352" width="82" height="44"/>
+          <text class="boxlab" x="595" y="378" text-anchor="middle">Launch</text>
+          <text class="tag" x="595" y="414" text-anchor="middle" fill="var(--verify)">GTM + GROWTH</text>
+
+          <rect class="box ok" x="656" y="352" width="228" height="44"/>
+          <text class="boxlab" x="770" y="371" text-anchor="middle">User testing &amp; feedback</text>
+          <text class="rolelab" x="770" y="388" text-anchor="middle">UX3 REVIEW</text>
+          <text class="tag" x="770" y="414" text-anchor="middle" fill="var(--accent)">USER FLOW &#8594; EVIDENCE</text>
+
+          <line class="flowline" x1="282" y1="366" x2="296" y2="366" marker-end="url(#arr)"/>
+          <line class="flowline" x1="296" y1="382" x2="282" y2="382" marker-end="url(#arr)"/>
+          <line class="flowline" x1="384" y1="366" x2="398" y2="366" marker-end="url(#arr)"/>
+          <line class="flowline" x1="398" y1="382" x2="384" y2="382" marker-end="url(#arr)"/>
+          <line class="flowline" x1="538" y1="374" x2="550" y2="374" marker-end="url(#arr)"/>
+          <line class="flowline" x1="640" y1="374" x2="652" y2="374" marker-end="url(#arr)"/>
+          <path class="loop" d="M 770 396 C 770 450, 250 450, 222 400" marker-end="url(#arrg)"/>
+          <text class="cap" x="493" y="492" text-anchor="middle" fill="var(--accent)">every stage iterates, every stage reads a flow &mdash; and field verdicts feed the next direction review</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOR HUMANS ================= -->
+<div class="human-zone">
+  <section class="section" id="for-humans">
+    <div class="kicker">For humans / 01</div>
+    <h2 class="title">Agentic design needs a human judgment loop.</h2>
+    <div class="prose">
+      <p>An <b>Agentic Design Process</b> means agents no longer wait until design is over.
+      They help frame the problem, gather evidence, generate options, build, launch, observe
+      use, and digest feedback into the next product decision.</p>
+      <p>That speed amplifies bad direction as easily as good execution.
+      <b>Designer-in-the-Loop</b> is the accountable decision role inside that process:
+      agents expand the option space and execute bounded work; designers own problem
+      framing, taste, trade-offs, ethics, meaning, uncertainty, and the final call.</p>
+      <p>UX3 turns this collaboration into a repeatable judgment layer. It gates the first
+      &ldquo;why build this?&rdquo;, stays active through build and launch, and closes the loop
+      from user feedback to the next direction. Each gate returns <code>continue</code>,
+      <code>verify</code>, or <code>stop_reframe</code> through a machine-checkable contract.</p>
+      <p>The name UX3 refers to the three flows a direction must survive together.
+      Judgment stays human where it belongs: taste, risk appetite, strategy, ethics, and
+      meaning are recorded as accountable human decisions, never delegated to a score.</p>
+    </div>
+
+    <h3>The three flows</h3>
+    <div class="flows">
+      <div class="flow" data-definition="Identifies target populations, affected people, excluded groups, situations, tasks, current workarounds, and the conditions under which the product should create an outcome."><b>User Flow</b><span>Identifies target populations, affected people, excluded groups, situations, tasks, current workarounds, and the conditions under which the product should create an outcome.</span></div>
+      <div class="flow" data-definition="Evidence Flow is the product sensing, learning, and calibration system joining internal and external data, behavior, subjective experience, interpretation, counter-signals, evaluations, and action traces; evidence informs decisions, while taste is recorded separately as an accountable human decision input."><b>Evidence Flow</b><span>Evidence Flow is the product sensing, learning, and calibration system joining internal and external data, behavior, subjective experience, interpretation, counter-signals, evaluations, and action traces; evidence informs decisions, while taste is recorded separately as an accountable human decision input.</span></div>
+      <div class="flow" data-definition="Identifies the company, project owner, issuer, accountable owner, and stakeholders who create value, receive value, pay, decide, operate, or absorb risk."><b>Business Flow</b><span>Identifies the company, project owner, issuer, accountable owner, and stakeholders who create value, receive value, pay, decide, operate, or absorb risk.</span></div>
+    </div>
+
+    <figure class="ux3-figure">
+      <img src="assets/ux3-model.svg" alt="UX3 Decision Kernel connecting User Flow, Business Flow, and Evidence Flow">
+      <figcaption>The three lane results are never averaged. The weakest flow controls the next action.</figcaption>
+    </figure>
+
+    <h3>How the UX3 Decision Kernel decides</h3>
+    <p class="lede">The center is a reducer, not a score. It converts three lane reviews
+    into one machine-checkable verdict while keeping taste, strategy, ethics, meaning,
+    and risk appetite accountable to a human owner.</p>
+    <div class="kernel-steps" aria-label="UX3 Decision Kernel steps">
+      <div class="kernel-step"><small>01</small><b>Validate</b><span>Reject malformed or contradictory contracts.</span></div>
+      <div class="kernel-step"><small>02</small><b>Reduce</b><span>Select the worst verdict and weakest flow.</span></div>
+      <div class="kernel-step"><small>03</small><b>Gate</b><span>Apply uncertainty, risk, reversibility, and human ownership.</span></div>
+      <div class="kernel-step"><small>04</small><b>Emit</b><span>Return verdict, next action, boundary, and stop conditions.</span></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="kicker">For humans / 02</div>
+    <h2 class="title">Six gates, three modes, one verdict.</h2>
+    <p class="lede">A review is a pipeline, not a meeting. Each gate has a trigger, a
+    required input, and a failure default that biases toward stopping early.</p>
+    <ol class="gates">
+      <li><div><b>Stage Gate</b> &mdash; <span>which lifecycle stage is this, and what
+      proof does that stage demand?</span></div></li>
+      <li><div><b>User Flow Gate</b> &mdash; <span>real actor, real problem, testable
+      experience.</span></div></li>
+      <li><div><b>Evidence Flow Gate</b> &mdash; <span>claims trace to receipts with
+      provenance, freshness, and counter-signals.</span></div></li>
+      <li><div><b>Business Flow Gate</b> &mdash; <span>a value path that survives cost,
+      retention, and channel scrutiny.</span></div></li>
+      <li><div><b>Council Gate</b> &mdash; <span>independent reviewers, a mandatory
+      challenge round, then synthesis. No averaging.</span></div></li>
+      <li><div><b>Human Judgment Gate</b> &mdash; <span>taste, risk, strategy, ethics,
+      meaning: decided by an accountable owner with reversal conditions.</span></div></li>
+    </ol>
+
+    <h3>Pick the smallest responsible mode</h3>
+    <div class="tablewrap">
+      <table>
+        <tr><th>Mode</th><th>Use when</th><th>Shape</th></tr>
+        <tr><td><code>quick_gate</code></td><td>Small, reversible, bounded change.</td>
+            <td>All three lanes, single pass.</td></tr>
+        <tr><td><code>standard_gate</code></td><td>New feature, workflow, or experiment.</td>
+            <td>Three lanes plus claim analysis.</td></tr>
+        <tr><td><code>ux3_council</code></td><td>High uncertainty, low reversibility,
+            meaningful risk, or human-owned trade-offs.</td>
+            <td>Fork three reviewers, challenge round, facilitated synthesis.</td></tr>
+      </table>
+    </div>
+    <div class="prose">
+      <p style="margin-top:18px;">The council is deliberately adversarial: reviewers work
+      independently behind a join barrier, then each must challenge another lane with
+      counter-evidence. The combined verdict always equals the <b>worst</b> lane verdict
+      &mdash; the weakest-flow rule is a deterministic algorithm enforced by <code>scripts/check_review.py</code>, so
+      a strong business case can never outvote missing evidence.</p>
+    </div>
+
+    <h3>Evidence tiers bound what you may do</h3>
+    <div class="tiers">
+      <div class="tier"><code>t0</code><span>Internal belief, no traceable source.</span><span class="max">reframe the question</span></div>
+      <div class="tier"><code>t1</code><span>Stated opinion, isolated quote, public signal.</span><span class="max">form a hypothesis</span></div>
+      <div class="tier"><code>t2</code><span>Contextual interview, observed workaround, small test.</span><span class="max">reversible prototype</span></div>
+      <div class="tier"><code>t3</code><span>Repeated behavior, payment, retention, product logs.</span><span class="max">bounded launch</span></div>
+      <div class="tier"><code>t4</code><span>Durable retention, workflow dependency, sound economics.</span><span class="max">consider scale</span></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="kicker">For humans / 03</div>
+    <h2 class="title">The handbook, chapter by chapter.</h2>
+    <p class="lede">Everything below ships in the repository. Read in this order the first
+    time; jump straight to a chapter afterwards.</p>
+    <div class="tablewrap">
+      <table>
+        <tr><th>Chapter</th><th>What it gives you</th></tr>
+        <tr><td><a href="https://github.com/cis2042/product-design-harness/blob/main/docs/UX3.md">UX3</a></td><td>The three flows, their intersections, and the deterministic Decision Kernel.</td></tr>
+        <tr><td><a href="https://github.com/cis2042/product-design-harness/blob/main/docs/HARNESS.md">Harness</a></td><td>The full handbook: gates, verdicts, boundaries, handoff to execution.</td></tr>
+        <tr><td><a href="https://github.com/cis2042/product-design-harness/blob/main/docs/COUNCIL.md">Council</a></td><td>Fork, challenge round, weakest-flow rule, human judgment gate.</td></tr>
+        <tr><td><a href="https://github.com/cis2042/product-design-harness/blob/main/docs/UNCERTAINTY.md">Uncertainty</a></td><td>Evidence tiers, confidence rubric, risk classes, decision matrix.</td></tr>
+        <tr><td><a href="https://github.com/cis2042/product-design-harness/blob/main/docs/CLAIMS.md">Claims</a></td><td>Claim decomposition, dependency edges, assumption vs. verified status.</td></tr>
+        <tr><td><a href="https://github.com/cis2042/product-design-harness/blob/main/docs/CONTRACTS.md">Contracts</a></td><td>The canonical review-result contract and every rule it enforces.</td></tr>
+        <tr><td><a href="https://github.com/cis2042/product-design-harness/blob/main/docs/OPERATING-PROTOCOL.md">Operating Protocol</a></td><td>Gate triggers, inputs, outputs, and failure defaults, stage by stage.</td></tr>
+        <tr><td><a href="https://github.com/cis2042/product-design-harness/blob/main/docs/ORCHESTRATION.md">Orchestration</a></td><td>How agents run it: mode selection, evidence retrieval, fork and join.</td></tr>
+        <tr><td><a href="https://github.com/cis2042/product-design-harness/blob/main/docs/ANTI-PATTERNS.md">Anti-Patterns</a></td><td>The failure modes the harness exists to prevent.</td></tr>
+        <tr><td><a href="https://github.com/cis2042/product-design-harness/blob/main/docs/GLOSSARY.md">Glossary</a></td><td>Every term, one line each.</td></tr>
+        <tr><td><a href="https://github.com/cis2042/product-design-harness/blob/main/docs/ADOPTION.md">Adoption</a></td><td>How a team installs it, and what installed actually means.</td></tr>
+      </table>
+    </div>
+    <div class="prose">
+      <p style="margin-top:18px;">Alongside the chapters: <b>prompts/</b> (ready-to-run
+      review prompts), <b>templates/</b> (human-readable companions), <b>schemas/</b>
+      (16 JSON Schema contracts), <b>examples/</b> (golden files for all review modes and the live-coding chain),
+      and <b>agents/</b> (six reviewer definitions plus a machine-readable registry).</p>
+      <p>Review results and context packs use <code>actor_boundary.target_population</code>
+      as the single target population source; there is no duplicate top-level field.</p>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="kicker">For humans / 04</div>
+    <h2 class="title">Questions UX3 can answer.</h2>
+    <p class="lede">Canonical answers for people and machines. Each answer is bounded by
+    the repository contract and links to the strongest source available.</p>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What is the UX3 Product Design Harness?</summary>
+        <p>UX3 Product Design Harness is an open, installable product judgment protocol for AI-agent teams. Before design or implementation, it reviews a decision across User Flow, Evidence Flow, and Business Flow, then returns one contract-validated verdict.</p>
+        <a class="faq-source" href="docs/UX3.md">Source: UX3 model</a>
+      </details>
+      <details class="faq-item">
+        <summary>How is UX3 different from a coding harness?</summary>
+        <p>A coding harness checks whether software is built correctly. UX3 checks whether the team should build the proposed direction, what evidence supports it, who receives and pays for value, and where human judgment must remain accountable.</p>
+        <a class="faq-source" href="docs/CODING-HARNESS-COMPARISON.md">Source: harness comparison</a>
+      </details>
+      <details class="faq-item">
+        <summary>When should an agent invoke UX3?</summary>
+        <p>Invoke UX3 before a new or materially changed product direction, feature, workflow, experiment, or costly irreversible commitment. Skip it for purely mechanical execution that already has an approved boundary and valid context pack.</p>
+        <a class="faq-source" href="SKILL.md">Source: skill contract</a>
+      </details>
+      <details class="faq-item">
+        <summary>What are the three UX3 flows?</summary>
+        <p>User Flow identifies target populations, affected people, situations, tasks, and desired outcomes. Evidence Flow tests claims with sources, signals, counter-signals, and uncertainty. Business Flow identifies owners, stakeholders, value exchange, costs, and durability.</p>
+        <a class="faq-source" href="docs/UX3.md">Source: three-flow definitions</a>
+      </details>
+      <details class="faq-item">
+        <summary>What verdicts can UX3 return?</summary>
+        <p>UX3 returns continue, verify, or stop_reframe. Continue permits bounded execution, verify requires specified evidence before proceeding, and stop_reframe rejects the current framing and requires a better product question.</p>
+        <a class="faq-source" href="docs/CONTRACTS.md">Source: canonical contracts</a>
+      </details>
+      <details class="faq-item">
+        <summary>How does UX3 handle evidence and uncertainty?</summary>
+        <p>Evidence is graded from untraceable belief to durable behavioral and economic proof. UX3 records provenance, freshness, counter-signals, and uncertainty, then lets the weakest flow and worst verdict control the next action instead of averaging scores.</p>
+        <a class="faq-source" href="docs/UNCERTAINTY.md">Source: uncertainty model</a>
+      </details>
+      <details class="faq-item">
+        <summary>What decisions must remain human-owned?</summary>
+        <p>Taste, strategy, ethics, meaning, risk appetite, and final accountability remain human-owned. An agent may analyze options and evidence, but an accountable person records the decision, rationale, owner, and reversal conditions.</p>
+        <a class="faq-source" href="docs/PRINCIPLES.md">Source: human judgment principles</a>
+      </details>
+      <details class="faq-item">
+        <summary>How does an agent install and use UX3?</summary>
+        <p>Install UX3 with npx skills add cis2042/product-design-harness -g -y. Ask the agent to review a product decision before implementation; the skill selects Quick Gate, Standard Gate, or UX3 Council and emits the canonical review contract.</p>
+        <a class="faq-source" href="docs/ADOPTION.md">Source: adoption guide</a>
+      </details>
+      <details class="faq-item">
+        <summary>What is an Agentic Design Process?</summary>
+        <p>An Agentic Design Process treats AI agents as active participants across product framing, research, ideation, prototyping, build, launch, and feedback. UX3 gives those participants stage gates, evidence duties, execution boundaries, and one shared review contract.</p>
+        <a class="faq-source" href="docs/HARNESS.md">Source: full-loop harness</a>
+      </details>
+      <details class="faq-item">
+        <summary>What does Designer-in-the-Loop mean?</summary>
+        <p>Designer-in-the-Loop means a designer remains accountable for taste, problem framing, trade-offs, ethics, meaning, and uncertainty while agents explore options, retrieve evidence, and execute bounded work. It is a decision role, not approval of every small task.</p>
+        <a class="faq-source" href="docs/PRINCIPLES.md">Source: human judgment principles</a>
+      </details>
+    </div>
+    <div class="knowledge-note">
+      <span>Last reviewed: 2026-07-11</span>
+      <span>Discovery markup improves interpretation; it does not guarantee ranking or citation.</span>
+    </div>
+  </section>
+</div>
+
+<!-- ================= FOR AGENTS ================= -->
+<div class="machine-zone">
+  <section class="section" id="for-agents">
+    <div class="kicker">For agents / 01</div>
+    <h2 class="title">when_to_invoke</h2>
+    <p class="lede">Machine entry point: <a href="https://github.com/cis2042/product-design-harness/blob/main/llms.txt"><code>llms.txt</code></a>.
+    Canonical output contract: <code>schemas/review-result.schema.json</code>. Everything
+    below is verifiable in-repo; do not take this page's word for it.</p>
+
+    <div class="entry-rails" aria-label="Agent documentation and working language">
+      <div class="entry-rail">
+        <p class="entry-label mono">Agent documentation</p>
+        <nav class="language-nav" aria-label="Agent documentation language">
+          <a href="README.md" lang="en">English</a>
+          <a href="i18n/zh-TW/README.md" lang="zh-TW">Traditional Chinese</a>
+          <a href="i18n/zh-CN/README.md" lang="zh-CN">Simplified Chinese</a>
+          <a href="i18n/ja/README.md" lang="ja">Japanese</a>
+          <a href="i18n/ko/README.md" lang="ko">Korean</a>
+          <a href="i18n/es/README.md" lang="es">Spanish</a>
+          <a href="i18n/fr/README.md" lang="fr">French</a>
+          <a href="i18n/de/README.md" lang="de">German</a>
+        </nav>
+      </div>
+      <div class="entry-rail">
+        <p class="entry-label mono">Agent working language</p>
+        <p class="work-copy">Copy one invocation into the agent session. Keep JSON keys, verdicts, rule IDs, and file paths in English. Follow the <a href="docs/LIVE-CODING.md">Live coding workflow</a>.</p>
+        <div class="work-tools" aria-label="Working language invocations">
+          <button class="work-chip" type="button" data-code="en" data-copy="Use UX3 Product Design Harness for this repository.&#10;Working language: en.&#10;Review this product decision before implementation: &lt;decision&gt;.">en<span class="sr-only"> copy working language invocation for English</span></button>
+          <button class="work-chip" type="button" data-code="zh-TW" data-copy="Use UX3 Product Design Harness for this repository.&#10;Working language: zh-TW.&#10;Review this product decision before implementation: &lt;decision&gt;.">zh-TW<span class="sr-only"> copy working language invocation for Traditional Chinese</span></button>
+          <button class="work-chip" type="button" data-code="zh-CN" data-copy="Use UX3 Product Design Harness for this repository.&#10;Working language: zh-CN.&#10;Review this product decision before implementation: &lt;decision&gt;.">zh-CN<span class="sr-only"> copy working language invocation for Simplified Chinese</span></button>
+          <button class="work-chip" type="button" data-code="ja" data-copy="Use UX3 Product Design Harness for this repository.&#10;Working language: ja.&#10;Review this product decision before implementation: &lt;decision&gt;.">ja<span class="sr-only"> copy working language invocation for Japanese</span></button>
+          <button class="work-chip" type="button" data-code="ko" data-copy="Use UX3 Product Design Harness for this repository.&#10;Working language: ko.&#10;Review this product decision before implementation: &lt;decision&gt;.">ko<span class="sr-only"> copy working language invocation for Korean</span></button>
+          <button class="work-chip" type="button" data-code="es" data-copy="Use UX3 Product Design Harness for this repository.&#10;Working language: es.&#10;Review this product decision before implementation: &lt;decision&gt;.">es<span class="sr-only"> copy working language invocation for Spanish</span></button>
+          <button class="work-chip" type="button" data-code="fr" data-copy="Use UX3 Product Design Harness for this repository.&#10;Working language: fr.&#10;Review this product decision before implementation: &lt;decision&gt;.">fr<span class="sr-only"> copy working language invocation for French</span></button>
+          <button class="work-chip" type="button" data-code="de" data-copy="Use UX3 Product Design Harness for this repository.&#10;Working language: de.&#10;Review this product decision before implementation: &lt;decision&gt;.">de<span class="sr-only"> copy working language invocation for German</span></button>
+        </div>
+        <p class="work-feedback mono" aria-live="polite">Selected: Use UX3 Product Design Harness for this repository. Working language: en. Review this product decision before implementation: &lt;decision&gt;.</p>
+      </div>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <tr><th>Situation</th><th>Action</th></tr>
+        <tr><td>Any new or materially changed product direction, before design or code.</td>
+            <td>Run a review. Select mode via <code>prompts/start-review.md</code>.</td></tr>
+        <tr><td>Small reversible change, bounded impact.</td><td><code>quick_gate</code></td></tr>
+        <tr><td>New feature, workflow, or experiment.</td><td><code>standard_gate</code></td></tr>
+        <tr><td>High uncertainty, low reversibility, external evidence, or human-owned trade-off.</td>
+            <td><code>ux3_council</code></td></tr>
+        <tr><td>A prior review already returned <code>continue</code> with a valid context pack.</td>
+            <td>Reuse the context pack. Do not re-review.</td></tr>
+        <tr><td>Pure execution of an already-approved boundary; trivial mechanical edit.</td>
+            <td>Out of scope. Proceed without the harness.</td></tr>
+      </table>
+    </div>
+
+    <h3>invariants (contract-enforced)</h3>
+<pre>combined_verdict == worst(lane_verdicts)          <span class="dim"># both directions</span>
+verdict fields are mutually exclusive             <span class="dim"># continue cannot carry reframed_question</span>
+challenge fields: required in challenge round,
+                  forbidden in independent round
+stop_reframe lane  =&gt; stop_reason_class required
+weakest_flow: severity &gt; lowest lane tier &gt; fixed priority
+headline evidence_tier &lt;= min(lane tiers)
+verified claim     =&gt; non-empty evidence_ids
+human decision     =&gt; review_id + accountable_owner
+                      + reversal_conditions
+evidence tier bounds the verdict: t0 =&gt; stop_reframe,
+                   t1 =&gt; never continue
+may_do and must_not_do cannot share an entry
+council challenge round needs &gt;= 1 real objection
+</pre>
+  </section>
+
+  <section class="section" id="install-agent">
+    <div class="kicker">For agents / 02</div>
+    <h2 class="title">install &amp;&amp; verify</h2>
+    <ol class="steps">
+      <li><b>install the skill</b>
+<pre>npx skills add cis2042/product-design-harness -g -y
+<span class="dim"># Private repository with authenticated GitHub SSH:</span>
+npx skills add git@github.com:cis2042/product-design-harness.git -g -y</pre></li>
+      <li><b>vendor</b>
+<pre>git clone https://github.com/cis2042/product-design-harness.git
+cd product-design-harness
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements-dev.txt   <span class="dim"># jsonschema only</span></pre></li>
+      <li><b>verify the tree before trusting it</b>
+<pre>.venv/bin/python -m unittest discover -s tests  <span class="c"># contracts, semantics, public surfaces</span>
+.venv/bin/python scripts/validate.py            <span class="c"># schema, asset, encoding checks</span>
+.venv/bin/python scripts/check_review.py examples/quick-gate-review.json</pre></li>
+      <li><b>wire into your agent</b>
+<pre>load  SKILL.md                        <span class="dim"># trigger + operating summary</span>
+entry prompts/start-review.md         <span class="dim"># mode selection</span>
+defs  agents/registry.json            <span class="dim"># six reviewers, machine-readable</span>
+emit  schemas/review-result.schema.json  <span class="dim"># the only final output shape</span></pre></li>
+      <li><b>gate your own outputs in CI</b>
+<pre>.venv/bin/python scripts/check_review.py &lt;your-review&gt;.json
+<span class="dim"># validates JSON shape + weakest-flow algorithm</span>
+<span class="dim"># + headline-tier rule; exit 0 = pass</span></pre></li>
+    </ol>
+
+    <h3>golden examples</h3>
+    <div class="tablewrap">
+      <table>
+        <tr><th>Mode</th><th>File</th></tr>
+        <tr><td><code>quick_gate</code></td><td><code>examples/quick-gate-review.json</code></td></tr>
+        <tr><td><code>standard_gate</code></td><td><code>examples/standard-gate-review.json</code></td></tr>
+        <tr><td><code>ux3_council</code></td><td><code>examples/ux3-council-review.json</code></td></tr>
+        <tr><td><code>live_coding</code></td><td><code>examples/live-coding-product-brief.json</code><br><code>examples/live-coding-review.json</code><br><code>examples/live-coding-context-pack.json</code></td></tr>
+      </table>
+    </div>
+    <div class="prose">
+      <p style="margin-top:18px;">Scope honesty: the harness enforces format and internal
+      consistency, not truth. It cannot verify that an evidence receipt's source exists.
+      What it guarantees is narrower and real: no decision leaves without stating its
+      evidence, its weakest flow, its trade-off, and its accountable owner. It also cannot force a review to
+      recognize a human-owned decision it declares as none, and cannot prove
+      the three lanes were reviewed independently; those limits are stated,
+      not hidden.</p>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div>Product Design Harness &mdash; MIT License &mdash;
+  <a href="https://github.com/cis2042/product-design-harness">github.com/cis2042/product-design-harness</a></div>
+  <div class="author">
+    <span>Author</span>
+    <a href="https://www.linkedin.com/in/cis2042/" aria-label="LinkedIn" title="LinkedIn">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+    <a href="https://scholar.google.com/citations?user=ILHilG8AAAAJ&amp;hl=zh-TW" aria-label="Google Scholar" title="Google Scholar">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.749-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+    </a>
+    <a href="https://github.com/cis2042" aria-label="GitHub" title="GitHub">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+    </a>
+  </div>
+  <a class="totop" href="#top">Back to top &#8593;</a>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.documentElement.classList.add("js");
+
+  // Hero entrance runs as pure CSS keyframes; no JS needed.
+  // Sections reveal once as they enter the viewport; a safety net guarantees
+  // nothing can stay hidden if the observer never fires.
+  var toReveal = Array.prototype.slice.call(
+    document.querySelectorAll(".compare .inner, .section, footer")
+  );
+  function inViewport(el) {
+    var r = el.getBoundingClientRect();
+    return r.top < window.innerHeight && r.bottom > 0;
+  }
+  toReveal.forEach(function (el) {
+    el.classList.add("reveal");
+    if (inViewport(el)) { el.classList.add("in"); }
+  });
+  if ("IntersectionObserver" in window) {
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in");
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    toReveal.forEach(function (el) { obs.observe(el); });
+  } else {
+    toReveal.forEach(function (el) { el.classList.add("in"); });
+  }
+  setTimeout(function () {
+    toReveal.forEach(function (el) { el.classList.add("in"); });
+  }, 1800);
+
+  // The feedback loop draws itself when row 3 becomes visible: the point of the diagram.
+  var loop = document.querySelector(".diagram .loop");
+  function drawLoop() {
+    if (!loop || loop.dataset.drawn) { return; }
+    loop.dataset.drawn = "1";
+    loop.style.transition = "stroke-dashoffset 1.6s ease 0.4s";
+    loop.style.strokeDashoffset = "0";
+  }
+  if (loop && !reduced && loop.getTotalLength) {
+    var len = loop.getTotalLength();
+    loop.style.strokeDasharray = String(len);
+    loop.style.strokeDashoffset = String(len);
+    if ("IntersectionObserver" in window) {
+      var lobs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) { drawLoop(); lobs.unobserve(loop); }
+        });
+      }, { threshold: 0.6 });
+      lobs.observe(loop);
+    }
+    var loopPoll = setInterval(function () {
+      if (loop.dataset.drawn) { clearInterval(loopPoll); return; }
+      if (inViewport(loop)) { drawLoop(); clearInterval(loopPoll); }
+    }, 700);
+  }
+
+  function fallbackCopy(text) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.left = "-9999px";
+    document.body.appendChild(ta);
+    ta.select();
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+  function markDone(btn, label) {
+    if (!btn.dataset.defaultLabel) { btn.dataset.defaultLabel = btn.textContent; }
+    btn.textContent = label || "copied";
+    btn.classList.add("done");
+    setTimeout(function () {
+      btn.textContent = btn.dataset.defaultLabel;
+      btn.classList.remove("done");
+    }, 1600);
+  }
+  document.querySelectorAll("[data-copy-install]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var value = btn.getAttribute("data-copy") || "";
+      function done() { markDone(btn, "ok"); }
+      if (fallbackCopy(value)) {
+        done();
+      } else if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(value).then(done, function () {
+          markDone(btn, "unavailable");
+        });
+      } else {
+        markDone(btn, "unavailable");
+      }
+    });
+  });
+  function selectPre(pre, btn) {
+    var range = document.createRange();
+    range.selectNodeContents(pre);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    markDone(btn, "selected - press ctrl/cmd+c");
+  }
+  document.querySelectorAll("pre").forEach(function (pre) {
+    var wrap = document.createElement("div");
+    wrap.className = "codewrap";
+    pre.parentNode.insertBefore(wrap, pre);
+    wrap.appendChild(pre);
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "copybtn";
+    btn.textContent = "copy";
+    btn.setAttribute("aria-label", "Copy code block");
+    btn.addEventListener("click", function () {
+      var text = pre.textContent.replace(/\s+$/, "");
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(
+          function () { markDone(btn); },
+          function () {
+            if (fallbackCopy(text)) { markDone(btn); }
+            else { selectPre(pre, btn); }
+          }
+        );
+      } else if (fallbackCopy(text)) {
+        markDone(btn);
+      } else {
+        selectPre(pre, btn);
+      }
+    });
+    wrap.appendChild(btn);
+  });
+  var workFeedback = document.querySelector(".work-feedback");
+  document.querySelectorAll(".work-chip").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var text = btn.getAttribute("data-copy") || "";
+      var code = btn.getAttribute("data-code") || "en";
+      var displayText = text.replace(/\s+/g, " ").trim();
+      if (workFeedback) {
+        workFeedback.textContent = "Selected: " + displayText;
+      }
+      function onSuccess() {
+        if (workFeedback) {
+          workFeedback.textContent = "Copied: Working language: " + code + ".";
+        }
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(onSuccess, function () {});
+      }
+    });
+  });
+})();
+</script>
+<script>
+(function () {
+  "use strict";
+  // Live star count via the GitHub REST API; the button renders regardless.
+  if (!window.fetch) { return; }
+  fetch("https://api.github.com/repos/cis2042/product-design-harness")
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (d) {
+      if (!d || typeof d.stargazers_count !== "number") { return; }
+      document.querySelectorAll(".star-count").forEach(function (el) {
+        el.textContent = String(d.stargazers_count);
+        el.classList.add("show");
+      });
+    })
+    .catch(function () {});
+})();
+</script>
+</body>
+</html>
