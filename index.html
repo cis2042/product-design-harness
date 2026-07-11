@@ -607,9 +607,6 @@
               aria-label="Copy public agent install command" title="Copy install command">&#10697;</button>
           </div>
         </div>
-        <div class="machine-note">Private repository? Use the authenticated SSH command in
-          <a href="#install-agent">Install for AI agents &#8594;</a>
-        </div>
       </div>
     </div>
   </div>
@@ -992,9 +989,7 @@ council challenge round needs &gt;= 1 real objection
     <h2 class="title">install &amp;&amp; verify</h2>
     <ol class="steps">
       <li><b>install the skill</b>
-<pre>npx skills add cis2042/product-design-harness -g -y
-<span class="dim"># Private repository with authenticated GitHub SSH:</span>
-npx skills add git@github.com:cis2042/product-design-harness.git -g -y</pre></li>
+<pre>npx skills add cis2042/product-design-harness -g -y</pre></li>
       <li><b>vendor</b>
 <pre>git clone https://github.com/cis2042/product-design-harness.git
 cd product-design-harness

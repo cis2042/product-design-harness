@@ -126,12 +126,6 @@ Instalación directa en entornos de agentes compatibles:
 npx skills add cis2042/product-design-harness -g -y
 ```
 
-Para un repo privado, use un remoto GitHub SSH autenticado:
-
-```text
-npx skills add git@github.com:cis2042/product-design-harness.git -g -y
-```
-
 Para inspeccionar y verificar el repo completo:
 
 ```text

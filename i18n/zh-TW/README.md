@@ -125,12 +125,6 @@ contract、收斂到最嚴重的判定、處理不確定性與人類負責的判
 npx skills add cis2042/product-design-harness -g -y
 ```
 
-Private repo 請使用已完成 GitHub SSH 驗證的位址：
-
-```text
-npx skills add git@github.com:cis2042/product-design-harness.git -g -y
-```
-
 若要檢查並驗證完整 repo：
 
 ```text

@@ -165,12 +165,6 @@ Install the Skill directly into supported agent environments:
 npx skills add cis2042/product-design-harness -g -y
 ```
 
-If the repository is private, use an authenticated GitHub SSH remote:
-
-```text
-npx skills add git@github.com:cis2042/product-design-harness.git -g -y
-```
-
 To inspect and verify the complete repository locally:
 
 ```text
