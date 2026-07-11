@@ -6,7 +6,7 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-BUNDLE_ROOT = ROOT / ".agents" / "skills" / "product-design-harness"
+BUNDLE_ROOT = ROOT / "skills" / "product-design-harness"
 BINARY_ASSET_SUFFIXES = {".gif", ".ico", ".jpeg", ".jpg", ".png", ".webp"}
 IGNORED_PATH_PARTS = {".git", ".superpowers", ".venv", "__pycache__"}
 REPOSITORY_PATH_TOKEN = re.compile(

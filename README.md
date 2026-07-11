@@ -41,7 +41,7 @@ The only dependency is `jsonschema`, used by `scripts/check_review.py` and
 
 The repository has two entrances to one knowledge system. Humans get the
 project site and handbook; agents install the complete skill bundle at
-`.agents/skills/product-design-harness/`, then use `llms.txt`, prompts,
+`skills/product-design-harness/`, then use `llms.txt`, prompts,
 schemas, rules, and golden examples. Both entrances use the same UX3 Decision
 Kernel and the same canonical review contract.
 
@@ -191,7 +191,7 @@ Preview the website and UTF-8 documentation with the repository server:
 
 Then wire it into your agent:
 
-1. Load `.agents/skills/product-design-harness/SKILL.md` as the harness skill
+1. Load `skills/product-design-harness/SKILL.md` as the harness skill
    or system instruction. Its `resources/` directory must stay beside it.
 2. Load `resources/schemas/session-config.schema.json`,
    `resources/knowledge/ontology.json`, `resources/knowledge/rules.json`,
@@ -239,8 +239,7 @@ rule controls and the translation is marked for correction.
 
 | Path | Purpose |
 |---|---|
-| `.agents/skills/product-design-harness/SKILL.md` | Installable skill entrypoint; includes all runtime resources. |
-| `SKILL.md` | Source contract for repository readers; marked internal so the installer selects the complete bundle. |
+| `skills/product-design-harness/SKILL.md` | Installable skill entrypoint; includes all runtime resources. |
 | `llms.txt` | Machine-readable repository index. |
 | `schemas/session-config.schema.json` | Working-language contract; `working_language`, `canonical_identifiers`, and `fallback_language`. |
 | `schemas/review-result.schema.json` | Canonical review result for `continue`, `verify`, and `stop_reframe`. |

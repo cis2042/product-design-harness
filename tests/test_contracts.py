@@ -825,7 +825,11 @@ class HarnessContractTests(unittest.TestCase):
         self.assertEqual([], missing)
 
     def test_entrypoints_name_the_canonical_schema(self):
-        for relative_path in ["README.md", "SKILL.md", "llms.txt"]:
+        for relative_path in [
+            "README.md",
+            "skills/product-design-harness/SKILL.md",
+            "llms.txt",
+        ]:
             text = (ROOT / relative_path).read_text(encoding="utf-8")
             self.assertIn("schemas/review-result.schema.json", text, relative_path)
 
@@ -855,7 +859,9 @@ class HarnessContractTests(unittest.TestCase):
         self.assertEqual([], missing)
 
     def test_skill_description_is_trigger_only(self):
-        text = (ROOT / "SKILL.md").read_text(encoding="utf-8")
+        text = (ROOT / "skills" / "product-design-harness" / "SKILL.md").read_text(
+            encoding="utf-8"
+        )
         description = next(
             line.removeprefix("description: ").strip()
             for line in text.splitlines()

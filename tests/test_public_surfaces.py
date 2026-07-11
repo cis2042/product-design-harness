@@ -18,7 +18,7 @@ from scripts.serve import UTF8HTTPRequestHandler
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC_VALIDATOR_SURFACES = [
     "README.md",
-    "SKILL.md",
+    "skills/product-design-harness/SKILL.md",
     "llms.txt",
     "docs/ADOPTION.md",
     "docs/LIVE-CODING.md",
@@ -41,7 +41,7 @@ class PublicSurfaceTests(unittest.TestCase):
             "index.html",
             "docs/UX3.md",
             "assets/ux3-model.svg",
-            "SKILL.md",
+            "skills/product-design-harness/SKILL.md",
             "llms.txt",
         ]:
             text = (ROOT / relative_path).read_text(encoding="utf-8")
@@ -180,7 +180,7 @@ class PublicSurfaceTests(unittest.TestCase):
         self.assertIsNone(card["interface"]["remoteEndpoint"])
         self.assertIsNone(manifest["interface"]["remoteEndpoint"])
         self.assertIn("npx skills add", card["interface"]["installCommand"])
-        self.assertIn(".agents/skills/product-design-harness/SKILL.md", manifest["interface"]["entryPoint"])
+        self.assertIn("skills/product-design-harness/SKILL.md", manifest["interface"]["entryPoint"])
         self.assertFalse(card["claims"]["a2aEndpoint"])
         self.assertFalse(manifest["claims"]["a2aEndpoint"])
 
@@ -589,7 +589,9 @@ class PublicSurfaceTests(unittest.TestCase):
         self.assertFalse((ROOT / "docs" / "superpowers").exists())
 
     def test_skill_loads_kernel_language_and_start_review_in_order(self):
-        skill = (ROOT / "SKILL.md").read_text(encoding="utf-8")
+        skill = (ROOT / "skills" / "product-design-harness" / "SKILL.md").read_text(
+            encoding="utf-8"
+        )
         expected_order = [
             "schemas/session-config.schema.json",
             "knowledge/ontology.json",
@@ -599,7 +601,7 @@ class PublicSurfaceTests(unittest.TestCase):
         positions = [skill.find(term) for term in expected_order]
         self.assertFalse(
             any(position == -1 for position in positions),
-            "SKILL.md must name session config, ontology, rules, and start-review",
+            "installed skill must name session config, ontology, rules, and start-review",
         )
         self.assertEqual(positions, sorted(positions))
         self.assertIn("working_language", skill)
@@ -607,7 +609,9 @@ class PublicSurfaceTests(unittest.TestCase):
         self.assertIn("canonical UX3 knowledge kernel", skill)
 
     def test_skill_names_new_distilled_rule_triggers(self):
-        skill = (ROOT / "SKILL.md").read_text(encoding="utf-8")
+        skill = (ROOT / "skills" / "product-design-harness" / "SKILL.md").read_text(
+            encoding="utf-8"
+        )
         expected_rule_ids = [
             "ux3.rule.mental_model_alignment",
             "ux3.rule.human_factors_load",
@@ -647,7 +651,9 @@ class PublicSurfaceTests(unittest.TestCase):
 
     def test_skill_blocks_live_coding_until_continue_context_pack(self):
         surfaces = {
-            "SKILL.md": (ROOT / "SKILL.md").read_text(encoding="utf-8"),
+            "skills/product-design-harness/SKILL.md": (
+                ROOT / "skills" / "product-design-harness" / "SKILL.md"
+            ).read_text(encoding="utf-8"),
             "prompts/start-review.md": (ROOT / "prompts/start-review.md").read_text(
                 encoding="utf-8"
             ),

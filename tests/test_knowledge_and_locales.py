@@ -338,7 +338,14 @@ class KnowledgeAndLocaleContractTests(unittest.TestCase):
     def test_all_markdown_page_links_resolve(self):
         findings = []
         for markdown_path in sorted(ROOT.rglob("*.md")):
-            if any(part.startswith(".") for part in markdown_path.relative_to(ROOT).parts):
+            relative_path = markdown_path.relative_to(ROOT)
+            if any(part.startswith(".") for part in relative_path.parts):
+                continue
+            if relative_path.parts[:3] == (
+                "skills",
+                "product-design-harness",
+                "resources",
+            ):
                 continue
             text = markdown_path.read_text(encoding="utf-8")
             for raw_target in re.findall(r"\[[^\]]+\]\(([^)]+)\)", text):
