@@ -40,9 +40,10 @@ The only dependency is `jsonschema`, used by `scripts/check_review.py` and
 `scripts/validate.py` to validate review outputs and repository contracts.
 
 The repository has two entrances to one knowledge system. Humans get the
-project site and handbook; agents get `SKILL.md`, `llms.txt`, prompts,
-schemas, rules, and golden examples. Both entrances use the same
-UX3 Decision Kernel and the same canonical review contract.
+project site and handbook; agents install the complete skill bundle at
+`.agents/skills/product-design-harness/`, then use `llms.txt`, prompts,
+schemas, rules, and golden examples. Both entrances use the same UX3 Decision
+Kernel and the same canonical review contract.
 
 ## Community-built strategic design knowledge
 
@@ -190,15 +191,17 @@ Preview the website and UTF-8 documentation with the repository server:
 
 Then wire it into your agent:
 
-1. Load `SKILL.md` as the harness skill or system instruction.
-2. Load `schemas/session-config.schema.json`, `knowledge/ontology.json`,
-   `knowledge/rules.json`, then `prompts/start-review.md`.
-3. Validate every review output with `scripts/check_review.py`; JSON Schema
+1. Load `.agents/skills/product-design-harness/SKILL.md` as the harness skill
+   or system instruction. Its `resources/` directory must stay beside it.
+2. Load `resources/schemas/session-config.schema.json`,
+   `resources/knowledge/ontology.json`, `resources/knowledge/rules.json`,
+   then `resources/prompts/start-review.md`.
+3. Validate every review output with `resources/scripts/check_review.py`; JSON Schema
    alone checks shape and conditionals, while `check_review.py` also checks the
    weakest-flow and headline-tier rules.
-4. Compare your first outputs to `examples/quick-gate-review.json`,
-   `examples/standard-gate-review.json`, and
-   `examples/ux3-council-review.json`.
+4. Compare your first outputs to `resources/examples/quick-gate-review.json`,
+   `resources/examples/standard-gate-review.json`, and
+   `resources/examples/ux3-council-review.json`.
 
 Live-coding boundary: review and implementation are separate. `verify`
 authorizes only the exact proof step. `continue` plus a valid
@@ -236,7 +239,8 @@ rule controls and the translation is marked for correction.
 
 | Path | Purpose |
 |---|---|
-| `SKILL.md` | Installable skill entrypoint. |
+| `.agents/skills/product-design-harness/SKILL.md` | Installable skill entrypoint; includes all runtime resources. |
+| `SKILL.md` | Source contract for repository readers; marked internal so the installer selects the complete bundle. |
 | `llms.txt` | Machine-readable repository index. |
 | `schemas/session-config.schema.json` | Working-language contract; `working_language`, `canonical_identifiers`, and `fallback_language`. |
 | `schemas/review-result.schema.json` | Canonical review result for `continue`, `verify`, and `stop_reframe`. |

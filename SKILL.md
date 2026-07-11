@@ -1,6 +1,8 @@
 ---
 name: product-design-harness
 description: Use when a product direction, feature, workflow, experiment, launch, feedback signal, automation, or scale decision needs judgment before execution or the next iteration.
+metadata:
+  internal: true
 ---
 
 # Product Design Harness

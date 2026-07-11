@@ -6,6 +6,7 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+BUNDLE_ROOT = ROOT / ".agents" / "skills" / "product-design-harness"
 BINARY_ASSET_SUFFIXES = {".gif", ".ico", ".jpeg", ".jpg", ".png", ".webp"}
 IGNORED_PATH_PARTS = {".git", ".superpowers", ".venv", "__pycache__"}
 REPOSITORY_PATH_TOKEN = re.compile(
@@ -84,6 +85,8 @@ def validate_repository_paths():
         text = path.read_text(encoding="utf-8")
         for token in REPOSITORY_PATH_TOKEN.findall(text):
             candidates = [ROOT / token, path.parent / token]
+            if token.startswith("resources/"):
+                candidates.append(BUNDLE_ROOT / token)
             if not any(candidate.exists() for candidate in candidates):
                 missing.append(f"{path.relative_to(ROOT)}: {token}")
         for token in BARE_FILE_TOKEN.findall(text):
