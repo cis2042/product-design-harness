@@ -11,6 +11,21 @@ reframed anywhere in the product loop.
 Execution includes design, implementation, prototype, launch, growth,
 automation, or investment.
 
+## Locate The Kernel First
+
+This file often travels alone (single-file skill installs). Every path
+below is relative to the repository root. If the repository is not on
+disk yet, vendor it first:
+
+```
+git clone https://github.com/cis2042/product-design-harness
+```
+
+Raw files are also readable at
+https://raw.githubusercontent.com/cis2042/product-design-harness/main/
+and the project site at https://cis2042.github.io/product-design-harness/.
+Do not improvise the kernel from memory; load the real files.
+
 ## Start
 
 Load in this order:
