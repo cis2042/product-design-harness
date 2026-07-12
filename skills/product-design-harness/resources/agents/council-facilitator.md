@@ -43,9 +43,12 @@ Additional rules:
   may downgrade the combined verdict to verify.
 - On stop_reframe, the execution boundary carries no build scope:
   may_do lists research and reframing actions only.
-- A human override of any recommendation must be recorded through
-  `schemas/human-decision.schema.json` and logged with
-  `templates/decision-log.md`; an unlogged override does not exist.
+- A human override of any verdict must be recorded through
+  `schemas/verdict-override.schema.json` (checked with
+  `scripts/check_override.py`) and tracked in
+  `templates/override-ledger.md`; an unlogged override does not exist.
+  The review-result itself is never edited - the verdict stays on
+  record, and the override authorizes execution despite it.
 
 Only `continue` creates a context pack. `verify` creates one proof step.
 `stop_reframe` creates one better product question.
