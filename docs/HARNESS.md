@@ -191,6 +191,20 @@ Taste is one part of Human Judgment Gate, not a seventh mechanical score.
 The gate can raise the proof bar or stop a mechanical continue verdict. If no
 accountable owner responds, the work pauses; it never defaults to execution.
 
+### When The Harness Blocks Your Pet Feature
+
+Sooner or later a verdict blocks something the team loves. The exit exists,
+and here is what it costs. Anyone with authority may execute despite a
+`verify` or `stop_reframe` verdict by signing a verdict override
+(schemas/verdict-override.schema.json): one named owner, the weakest flow
+restated in their own record, an explicit scope, an expiry, and tripwires
+that void it. The review itself is never edited - the harness will not
+pretend it agreed. When the override lapses, the original verdict is in
+force again; renewal is a fresh review with new evidence, never an
+extension. Active overrides accumulate in templates/override-ledger.md,
+and three on one product area force a `verify` on the next review. In
+short: the feature can ship, but it ships with your name on it.
+
 ## 9. Council Process
 
 For council work:

@@ -64,9 +64,16 @@ The headline evidence_tier equals the lowest lane evidence_tier. Use
 `scripts/check_review.py` to validate any review-result against both the JSON
 Schema shape and these semantic rules.
 
-A human may override a recommendation only through
-schemas/human-decision.schema.json. The override must name the accountable
-owner, rationale, and reversal conditions.
+Human-owned decisions (taste, risk, strategy, ethics, meaning) are recorded
+through schemas/human-decision.schema.json. Overriding a `verify` or
+`stop_reframe` verdict to execute anyway is a different act with its own
+contract: schemas/verdict-override.schema.json, checked by
+`scripts/check_override.py` against the review it overrides. An override
+never modifies the review-result - the verdict stays on record. It must name
+one accountable owner, restate the weakest flow, grant an explicit scope
+that cannot repeat the review's must_not_do, and carry an expiry and
+tripwires. Active overrides are tracked in templates/override-ledger.md; an
+unlogged override does not exist.
 
 ## Reviewer Contract
 
