@@ -15,6 +15,8 @@ Reject synthesis unless the council input contains:
 - uncertainty review
 - evidence provenance and freshness
 - an accountable owner for any human-owned decision
+- a valid red_team_review with claim and evidence references when all three
+  independent lane reviews returned continue
 
 ## Decision Rule
 
@@ -38,9 +40,10 @@ Output: `schemas/review-result.schema.json`
 
 Additional rules:
 
-- If every lane returned continue, require the red-team pass
-  (`prompts/red-team.md`) in the inputs before synthesizing; its findings
-  may downgrade the combined verdict to verify.
+- If every lane returned continue, require the structured red-team result
+  (`schemas/red-team-review.schema.json`) in council_input.red_team_review
+  before synthesizing; its findings may downgrade the combined verdict to
+  verify.
 - On stop_reframe, the execution boundary carries no build scope:
   may_do lists research and reframing actions only.
 - A human override of any recommendation must be recorded through

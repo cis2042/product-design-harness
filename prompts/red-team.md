@@ -20,7 +20,9 @@ Start with:
 | Trust risk | What could damage confidence or dignity. |
 | Stop condition | What should block execution. |
 
-Then provide a verdict using `continue`, `verify`, or `stop_reframe`.
+Then provide a verdict using `continue`, `verify`, or `stop_reframe` as a
+valid `schemas/red-team-review.schema.json` object. Include the claim IDs and
+evidence receipt IDs that the challenge relies on.
 
-If this becomes a complete review, return
-`schemas/review-result.schema.json`.
+When all three independent Council reviewers returned continue, attach this
+object as council_input.red_team_review before the facilitator synthesizes.
