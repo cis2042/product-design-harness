@@ -26,6 +26,29 @@
       "minItems": 3,
       "maxItems": 3
     },
-    "uncertainty_review": { "$ref": "uncertainty-review.schema.json" }
-  }
+    "uncertainty_review": { "$ref": "uncertainty-review.schema.json" },
+    "red_team_review": { "$ref": "red-team-review.schema.json" }
+  },
+  "allOf": [
+    {
+      "if": {
+        "required": ["independent_reviews"],
+        "properties": {
+          "independent_reviews": {
+            "contains": {
+              "type": "object",
+              "required": ["verdict"],
+              "properties": {
+                "verdict": { "const": "continue" }
+              }
+            },
+            "minContains": 3
+          }
+        }
+      },
+      "then": {
+        "required": ["red_team_review"]
+      }
+    }
+  ]
 }

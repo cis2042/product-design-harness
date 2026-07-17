@@ -16,6 +16,7 @@ These schemas define machine-checkable Product Design Harness outputs.
 | `human-decision.schema.json` | Human-owned decision record. |
 | `ontology.schema.json` | Machine-readable UX3 ontology. |
 | `product-brief.schema.json` | Machine-readable intake. |
+| `red-team-review.schema.json` | Structured counter-case required when every independent Council lane continues. |
 | `review-result.schema.json` | Canonical final result for every review mode. |
 | `reviewer-verdict.schema.json` | Individual reviewer output per round; summarized into the canonical result's lane reviews. |
 | `session-config.schema.json` | Working-language session configuration. |

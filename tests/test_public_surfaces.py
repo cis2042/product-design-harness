@@ -405,13 +405,14 @@ class PublicSurfaceTests(unittest.TestCase):
         schema_count = len(list((ROOT / "schemas").glob("*.json")))
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
 
-        self.assertEqual(16, schema_count)
+        self.assertEqual(17, schema_count)
         self.assertIn(f"({schema_count} JSON Schema contracts)", html)
         self.assertIn(f"one of {schema_count} schemas", readme)
         self.assertNotIn("(twelve JSON Schema contracts)", html)
         self.assertIn("examples/live-coding-product-brief.json", html)
         self.assertIn("examples/live-coding-review.json", html)
         self.assertIn("examples/live-coding-context-pack.json", html)
+        self.assertIn("examples/red-team-review.json", html)
 
     def test_readme_exposes_distilled_rule_inventory(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")

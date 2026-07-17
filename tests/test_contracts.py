@@ -157,8 +157,10 @@ class HarnessContractTests(unittest.TestCase):
             "examples/evidence-response.json",
             "examples/ux3-council-review.json",
             "examples/stop-reframe-review.json",
+            "examples/red-team-review.json",
             "schemas/evidence-request.schema.json",
             "schemas/evidence-response.schema.json",
+            "schemas/red-team-review.schema.json",
         ]
         missing = [path for path in required if not (ROOT / path).is_file()]
         self.assertEqual([], missing)
@@ -172,7 +174,7 @@ class HarnessContractTests(unittest.TestCase):
 
     def test_schema_inventory_has_exact_public_contract_count(self):
         schema_paths = sorted((ROOT / "schemas").glob("*.json"))
-        self.assertEqual(16, len(schema_paths))
+        self.assertEqual(17, len(schema_paths))
 
     def test_schema_readme_inventory_matches_schema_files(self):
         readme = (ROOT / "schemas" / "README.md").read_text(encoding="utf-8")
@@ -437,6 +439,10 @@ class HarnessContractTests(unittest.TestCase):
         Draft202012Validator(
             evidence_schemas[1], registry=registry
         ).validate(load_json("examples/evidence-response.json"))
+
+        Draft202012Validator(
+            load_json("schemas/red-team-review.schema.json")
+        ).validate(load_json("examples/red-team-review.json"))
 
     def test_live_coding_chain_is_traceable_and_bounded(self):
         brief = load_json("examples/live-coding-product-brief.json")
