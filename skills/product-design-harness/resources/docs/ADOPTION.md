@@ -101,3 +101,14 @@ A repository has installed the harness when all of the following are true:
 | Skipping human judgment. | Route taste, risk, strategy, ethics, and meaning to humans. |
 | Creating broad context packs. | Narrow scope and add stop conditions. |
 | Treating live-coding prompts as approval. | Require a valid review and context pack before implementation. |
+
+## 8. For Product Designers And PMs
+
+You adopt this harness by instructing your agent, not by learning the
+contracts. Paste the repository URL to your agent and ask it to review a
+product decision; the agent installs the harness, runs the review, and
+returns one of three verdicts: `continue`, `verify`, or `stop_reframe`.
+Your job is to supply the decision, the evidence you actually have, and
+the human judgment calls the agent routes back to you. You never run the
+scripts, write JSON, or read schemas by hand - if an integration step on
+this page looks technical, it is your agent's job, not yours.
