@@ -3,6 +3,22 @@
 Machine-enforced product judgment across the whole loop: direction, build,
 launch, and user feedback.
 
+## Who This Is For
+
+The operator of this harness is an AI agent - Claude Code, Codex, or any
+agent runtime. The agent installs it, loads the contracts, runs the
+reviews, and enforces the rules.
+
+Product designers and PMs are the beneficiaries, not the operators. Your
+entire entry point is one sentence: paste this repository URL to your
+agent and ask it to review a product decision. You supply the decision,
+the evidence, and the human judgment calls the agent routes back to you.
+You never run the CLI, write JSON, or read schemas by hand.
+
+You are not in the right place if you want a UI design tool, a prototype
+polisher, or a human-only checklist. There is no server, no SDK, and no
+dashboard. This is judgment knowledge your agent loads and applies.
+
 <!-- locale-selector -->
 ## Read In / Work In
 
