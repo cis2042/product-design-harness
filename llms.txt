@@ -45,6 +45,9 @@ Contract-enforced rules (JSON Schema plus scripts/check_review.py, not prose):
   priority evidence/user/business (docs/CONTRACTS.md)
 - evidence receipts require provenance, freshness, counter-signal, and a
   tier t0-t4 (schemas/evidence.schema.json)
+- durable knowledge records classify time, epistemic state, space, and
+  authority while preserving source, valid time, confirmer, sensitivity, and
+  supersession links (schemas/knowledge-record.schema.json)
 - human decisions link both ways via review_id and human_decision_record_id
   with accountable owner and reversal conditions
   (schemas/human-decision.schema.json)
@@ -70,6 +73,7 @@ Docs:
 - docs/CONTRACTS.md
 - docs/COUNCIL.md
 - docs/LIVE-CODING.md
+- docs/KNOWLEDGE-STATE-MATRIX.md
 
 Golden review examples (all validate against the canonical review contract):
 
@@ -98,6 +102,8 @@ Operating rules:
 - use evidence tiers to bound action
 - do not average reviewer verdicts
 - run a challenge round in council mode
+- do not reuse durable knowledge until all four state dimensions and the
+  mandatory record envelope are explicit
 
 UX3 Decision Kernel:
 

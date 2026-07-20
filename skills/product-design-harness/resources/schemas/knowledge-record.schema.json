@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cis2042.github.io/product-design-harness/schemas/knowledge-record.schema.json",
+  "title": "UX3 Knowledge Record",
+  "description": "A durable product knowledge record classified by time, epistemic state, space, and authority status.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_id",
+    "statement",
+    "time_state",
+    "epistemic_state",
+    "space_state",
+    "authority_status",
+    "source",
+    "valid_time",
+    "confirmed_by",
+    "sensitivity_level",
+    "relationships",
+    "authority_rationale"
+  ],
+  "properties": {
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "statement": {
+      "type": "string",
+      "minLength": 1
+    },
+    "time_state": {
+      "type": "string",
+      "enum": ["past", "present"]
+    },
+    "epistemic_state": {
+      "type": "string",
+      "enum": ["known", "unknown", "assumption"]
+    },
+    "space_state": {
+      "type": "string",
+      "enum": ["internal", "external"]
+    },
+    "authority_status": {
+      "type": "string",
+      "enum": ["candidate", "canonical", "conflicted", "superseded"]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_id", "source_type", "source_uri"],
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_type": {
+          "type": "string",
+          "enum": [
+            "evidence_receipt",
+            "human_observation",
+            "product_system",
+            "document",
+            "external_publication",
+            "policy",
+            "derived"
+          ]
+        },
+        "source_uri": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "valid_time": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["valid_from", "valid_until", "last_checked_at"],
+      "properties": {
+        "valid_from": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "valid_until": {
+          "oneOf": [
+            {"type": "string", "format": "date-time"},
+            {"type": "null"}
+          ]
+        },
+        "last_checked_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "confirmed_by": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["actor_id", "role", "confirmed_at"],
+      "properties": {
+        "actor_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "type": "string",
+          "minLength": 1
+        },
+        "confirmed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "decision_record_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "sensitivity_level": {
+      "type": "string",
+      "enum": ["public", "internal", "confidential", "restricted"]
+    },
+    "relationships": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["supersedes", "superseded_by", "conflicts_with"],
+      "properties": {
+        "supersedes": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "superseded_by": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "conflicts_with": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        }
+      }
+    },
+    "authority_rationale": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"time_state": {"const": "past"}},
+        "required": ["time_state"]
+      },
+      "then": {
+        "properties": {
+          "valid_time": {
+            "properties": {
+              "valid_until": {"type": "string", "format": "date-time"}
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {"authority_status": {"const": "conflicted"}},
+        "required": ["authority_status"]
+      },
+      "then": {
+        "properties": {
+          "relationships": {
+            "properties": {
+              "conflicts_with": {"minItems": 1}
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {"authority_status": {"const": "superseded"}},
+        "required": ["authority_status"]
+      },
+      "then": {
+        "properties": {
+          "relationships": {
+            "properties": {
+              "superseded_by": {"minItems": 1}
+            }
+          }
+        }
+      }
+    }
+  ]
+}

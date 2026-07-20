@@ -4,6 +4,7 @@
 |---|---|
 | `HARNESS.md` | Complete manual. |
 | `UX3.md` | UX3 model, intersections, and the integrated center. |
+| `KNOWLEDGE-STATE-MATRIX.md` | Four-dimensional governance for durable product knowledge. |
 | `OPERATING-PROTOCOL.md` | Six-gate operating system for staged product decisions. |
 | `ORCHESTRATION.md` | MCP, connector, subagent, council, and debate workflow. |
 | `UNCERTAINTY.md` | Confidence, proof bar, and uncertainty handling. |

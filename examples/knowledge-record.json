@@ -1,0 +1,31 @@
+{
+  "record_id": "knowledge-onboarding-workaround-2026-07",
+  "statement": "New workspace administrators currently use a shared checklist to complete first-time setup.",
+  "time_state": "present",
+  "epistemic_state": "known",
+  "space_state": "internal",
+  "authority_status": "canonical",
+  "source": {
+    "source_id": "ev-onboarding-workaround-2026-07",
+    "source_type": "evidence_receipt",
+    "source_uri": "internal://research/onboarding-workaround/2026-07"
+  },
+  "valid_time": {
+    "valid_from": "2026-07-01T00:00:00Z",
+    "valid_until": "2026-10-01T00:00:00Z",
+    "last_checked_at": "2026-07-15T09:00:00Z"
+  },
+  "confirmed_by": {
+    "actor_id": "product-research-lead",
+    "role": "Product research lead",
+    "confirmed_at": "2026-07-15T10:00:00Z",
+    "decision_record_id": "decision-onboarding-baseline-2026-07"
+  },
+  "sensitivity_level": "internal",
+  "relationships": {
+    "supersedes": ["knowledge-onboarding-workaround-2026-04"],
+    "superseded_by": [],
+    "conflicts_with": []
+  },
+  "authority_rationale": "Three contextual interviews and two workflow traces show the same active workaround."
+}

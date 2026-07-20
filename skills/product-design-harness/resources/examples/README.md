@@ -17,3 +17,4 @@
 | `ux3-council-review.json` | Machine-checkable Council result. |
 | `human-decision.json` | Accountable decision record used by the Council example. |
 | `evidence-response.json` | Evidence receipts with provenance and freshness. |
+| `knowledge-record.json` | Durable knowledge record with source, valid time, confirmer, sensitivity, and supersession links. |

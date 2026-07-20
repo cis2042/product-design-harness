@@ -11,5 +11,6 @@ These editorial plates make Product Design Harness easier to read as a handbook.
 | `harness-sequence.svg` | Plate 03: operating sequence. |
 | `decision-gate.svg` | Plate 04: gate logic. |
 | `product-vs-coding-harness.svg` | Plate 05: product and coding harness comparison. |
+| `knowledge-state-matrix.svg` | Plate 06: durable knowledge classification and record envelope. |
 
 The visual plates are SVG and suitable for README, docs, slide decks, or book layouts. The UX3 wordmark is the original JPEG source supplied by the author.

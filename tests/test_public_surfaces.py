@@ -405,13 +405,36 @@ class PublicSurfaceTests(unittest.TestCase):
         schema_count = len(list((ROOT / "schemas").glob("*.json")))
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
 
-        self.assertEqual(16, schema_count)
+        self.assertEqual(17, schema_count)
         self.assertIn(f"({schema_count} JSON Schema contracts)", html)
         self.assertIn(f"one of {schema_count} schemas", readme)
         self.assertNotIn("(twelve JSON Schema contracts)", html)
         self.assertIn("examples/live-coding-product-brief.json", html)
         self.assertIn("examples/live-coding-review.json", html)
         self.assertIn("examples/live-coding-context-pack.json", html)
+
+    def test_readme_exposes_the_knowledge_state_matrix(self):
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        handbook = (ROOT / "docs" / "KNOWLEDGE-STATE-MATRIX.md").read_text(
+            encoding="utf-8"
+        )
+
+        self.assertIn("assets/knowledge-state-matrix.svg", readme)
+        self.assertIn("schemas/knowledge-record.schema.json", readme)
+        for token in [
+            "past",
+            "present",
+            "known",
+            "unknown",
+            "assumption",
+            "internal",
+            "external",
+            "candidate",
+            "canonical",
+            "conflicted",
+            "superseded",
+        ]:
+            self.assertIn(f"`{token}`", handbook)
 
     def test_readme_exposes_distilled_rule_inventory(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")

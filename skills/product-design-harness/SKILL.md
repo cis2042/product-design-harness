@@ -87,6 +87,11 @@ accountable owner. Missing issuer or owner blocks implementation.
 - Council mode requires independent reviews and a challenge round.
 - Designer taste is a human-owned input, never an evidence score.
 - Incoming feedback must be classified before it changes direction or work.
+- Durable knowledge reused across sessions, decisions, teams, or products must
+  validate against `resources/schemas/knowledge-record.schema.json`.
+- Unknown, conflicted, or superseded knowledge cannot silently support a
+  current decision; promotion, conflict resolution, and supersession require a
+  named human confirmer.
 - Human-owned decisions stay human-owned.
 
 ## Triggered Distilled Rules

@@ -30,6 +30,10 @@ class InstallableBundleTests(unittest.TestCase):
             "resources/prompts/start-review.md",
             "resources/templates/product-brief.md",
             "resources/examples/quick-gate-review.json",
+            "resources/examples/knowledge-record.json",
+            "resources/schemas/knowledge-record.schema.json",
+            "resources/docs/KNOWLEDGE-STATE-MATRIX.md",
+            "resources/assets/knowledge-state-matrix.svg",
         ]
         missing = [path for path in required_files if not (BUNDLE / path).is_file()]
         self.assertEqual([], missing)
@@ -60,6 +64,10 @@ class InstallableBundleTests(unittest.TestCase):
         self.assertEqual(
             (ROOT / "scripts" / "check_review.py").read_bytes(),
             (RESOURCES / "scripts" / "check_review.py").read_bytes(),
+        )
+        self.assertEqual(
+            (ROOT / "assets" / "knowledge-state-matrix.svg").read_bytes(),
+            (RESOURCES / "assets" / "knowledge-state-matrix.svg").read_bytes(),
         )
 
     def test_schema_ids_use_the_published_pages_urls(self):

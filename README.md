@@ -82,7 +82,7 @@ Every claim below is verifiable inside this repository:
 
 | Claim | Verify at |
 |---|---|
-| One canonical machine contract for every review mode: `schemas/review-result.schema.json` (JSON Schema draft 2020-12, one of 16 schemas in the repo). | `schemas/review-result.schema.json` |
+| One canonical machine contract for every review mode: `schemas/review-result.schema.json` (JSON Schema draft 2020-12, one of 17 schemas in the repo). | `schemas/review-result.schema.json` |
 | Working-language setup is explicit while canonical identifiers remain English. | `schemas/session-config.schema.json` |
 | Canonical UX3 definitions and rule IDs are loaded from machine files. | `knowledge/ontology.json`, `knowledge/rules.json` |
 | 21 decision rule cards operationalize the current kernel; six newly distilled cards carry chapter-level provenance, including `ux3.rule.human_agent_interaction` and `ux3.rule.motivation_ethics`. | `knowledge/rules.json`, `knowledge/source-chapters.json`, `docs/DECISION-RULES.md` |
@@ -140,6 +140,23 @@ uncertainty and human-owned calls, then emits the canonical review result.
 Human-owned calls are recorded; they are not converted into an evidence score.
 
 ![UX3 intersections](assets/intersections.svg)
+
+## Knowledge State Matrix
+
+Product knowledge needs governance before an agent reuses it. The Knowledge
+State Matrix classifies every durable record across four independent
+dimensions: time (`past`, `present`), epistemic state (`known`, `unknown`,
+`assumption`), space (`internal`, `external`), and authority status
+(`candidate`, `canonical`, `conflicted`, `superseded`).
+
+![Knowledge State Matrix](assets/knowledge-state-matrix.svg)
+
+Every retained or reused record must preserve its source, valid time,
+confirming actor, sensitivity level, and supersession relationships. Unknowns
+become evidence requests, assumptions require verification, conflicts stay
+visible, and superseded records remain traceable without governing the current
+decision. See `docs/KNOWLEDGE-STATE-MATRIX.md` and
+`schemas/knowledge-record.schema.json`.
 
 <!-- review-modes -->
 ## Review Modes
@@ -236,14 +253,14 @@ rule controls and the translation is marked for correction.
 | `skills/product-design-harness/SKILL.md` | Installable skill entrypoint; includes all runtime resources. |
 | `llms.txt` | Machine-readable repository index. |
 | `schemas/session-config.schema.json` | Working-language contract; `working_language`, `canonical_identifiers`, and `fallback_language`. |
-| `schemas/review-result.schema.json` | Canonical review result for `continue`, `verify`, and `stop_reframe`. |
+| `schemas/review-result.schema.json`, `schemas/knowledge-record.schema.json` | Canonical review result plus durable knowledge records with four state dimensions and mandatory provenance metadata. |
 | `knowledge/ontology.json` | Canonical UX3 flows, intersections, actors, stakeholders, and human judgment terms. |
 | `knowledge/rules.json` | 21 canonical rule cards, including `ux3.rule.actor_boundary`, with trigger, evidence, counter-signal, human boundary, stop condition, and output; newly distilled cards also cite source chapters. |
 | `knowledge/source-chapters.json` | Chapter manifest and source checksum for newly distilled curriculum provenance. |
 | `prompts/start-review.md` | Review entry prompt and mode selector. |
 | `templates/context-pack.md` | Handoff artifact created only after `continue`. |
 | `docs/HARNESS.md` | Complete English handbook. |
-| `docs/UX3.md` | UX3 model, intersections, and the UX3 Decision Kernel. |
+| `docs/UX3.md`, `docs/KNOWLEDGE-STATE-MATRIX.md` | UX3 Decision Kernel plus knowledge classification, transition, conflict, and supersession rules. |
 | `docs/ADOPTION.md` | Install and integration guide for agent teams. |
 | `docs/CONTRACTS.md` | Output fields and weakest-flow logic. |
 | `press-kit/PRESS-KIT.md` | Social cards and talking points for anyone presenting the harness. |

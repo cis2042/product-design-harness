@@ -24,6 +24,10 @@ Source repository: https://github.com/cis2042/product-design-harness
 - The weakest flow controls the next action.
 - Taste, strategy, ethics, meaning, risk appetite, and final accountability
   remain human-owned.
+- Durable product knowledge is classified by time, epistemic state, space, and
+  authority status before an agent reuses it.
+- Every durable knowledge record preserves source, valid time, confirmer,
+  sensitivity level, and supersession relationships.
 
 ## Why This Process Exists Now
 
@@ -79,6 +83,8 @@ After installation, ask the agent:
 - Contracts: docs/CONTRACTS.md
 - Uncertainty: docs/UNCERTAINTY.md
 - Human judgment principles: docs/PRINCIPLES.md
+- Knowledge state governance: docs/KNOWLEDGE-STATE-MATRIX.md
+- Knowledge record contract: schemas/knowledge-record.schema.json
 - Adoption: docs/ADOPTION.md
 - Output schema: schemas/review-result.schema.json
 - Validator: scripts/check_review.py

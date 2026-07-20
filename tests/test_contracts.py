@@ -151,14 +151,18 @@ class HarnessContractTests(unittest.TestCase):
             "docs/ANTI-PATTERNS.md",
             "docs/CLAIMS.md",
             "docs/CONTRACTS.md",
+            "docs/KNOWLEDGE-STATE-MATRIX.md",
             "examples/quick-gate-review.json",
             "examples/quick-context-pack.json",
             "examples/human-decision.json",
             "examples/evidence-response.json",
+            "examples/knowledge-record.json",
             "examples/ux3-council-review.json",
             "examples/stop-reframe-review.json",
             "schemas/evidence-request.schema.json",
             "schemas/evidence-response.schema.json",
+            "schemas/knowledge-record.schema.json",
+            "assets/knowledge-state-matrix.svg",
         ]
         missing = [path for path in required if not (ROOT / path).is_file()]
         self.assertEqual([], missing)
@@ -172,7 +176,7 @@ class HarnessContractTests(unittest.TestCase):
 
     def test_schema_inventory_has_exact_public_contract_count(self):
         schema_paths = sorted((ROOT / "schemas").glob("*.json"))
-        self.assertEqual(16, len(schema_paths))
+        self.assertEqual(17, len(schema_paths))
 
     def test_schema_readme_inventory_matches_schema_files(self):
         readme = (ROOT / "schemas" / "README.md").read_text(encoding="utf-8")
@@ -386,6 +390,60 @@ class HarnessContractTests(unittest.TestCase):
         }
         self.assertTrue(expected.issubset(required))
 
+    def test_knowledge_record_contract_enforces_matrix_and_record_envelope(self):
+        schema = load_json("schemas/knowledge-record.schema.json")
+        validator = Draft202012Validator(schema)
+        record = load_json("examples/knowledge-record.json")
+        validator.validate(record)
+
+        required = set(schema["required"])
+        self.assertTrue(
+            {
+                "time_state",
+                "epistemic_state",
+                "space_state",
+                "authority_status",
+                "source",
+                "valid_time",
+                "confirmed_by",
+                "sensitivity_level",
+                "relationships",
+            }.issubset(required)
+        )
+
+        for field in [
+            "source",
+            "valid_time",
+            "confirmed_by",
+            "sensitivity_level",
+            "relationships",
+        ]:
+            with self.subTest(field=field):
+                invalid = json.loads(json.dumps(record))
+                invalid.pop(field)
+                self.assertFalse(validator.is_valid(invalid))
+
+        conflicted = json.loads(json.dumps(record))
+        conflicted["authority_status"] = "conflicted"
+        self.assertFalse(validator.is_valid(conflicted))
+        conflicted["relationships"]["conflicts_with"] = ["knowledge-conflict"]
+        self.assertTrue(validator.is_valid(conflicted))
+
+        superseded = json.loads(json.dumps(record))
+        superseded["authority_status"] = "superseded"
+        self.assertFalse(validator.is_valid(superseded))
+        superseded["relationships"]["superseded_by"] = ["knowledge-replacement"]
+        self.assertTrue(validator.is_valid(superseded))
+
+        past = json.loads(json.dumps(record))
+        past["time_state"] = "past"
+        past["valid_time"]["valid_until"] = None
+        self.assertFalse(validator.is_valid(past))
+
+        canonical_assumption = json.loads(json.dumps(record))
+        canonical_assumption["epistemic_state"] = "assumption"
+        self.assertTrue(validator.is_valid(canonical_assumption))
+
     def test_agent_registry_is_machine_readable(self):
         registry = load_json("agents/registry.json")
         ids = {agent["id"] for agent in registry["agents"]}
@@ -437,6 +495,10 @@ class HarnessContractTests(unittest.TestCase):
         Draft202012Validator(
             evidence_schemas[1], registry=registry
         ).validate(load_json("examples/evidence-response.json"))
+
+        Draft202012Validator(
+            load_json("schemas/knowledge-record.schema.json")
+        ).validate(load_json("examples/knowledge-record.json"))
 
     def test_live_coding_chain_is_traceable_and_bounded(self):
         brief = load_json("examples/live-coding-product-brief.json")
