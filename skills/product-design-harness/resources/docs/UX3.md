@@ -139,7 +139,7 @@ the same four operations to every submitted review:
 | Step | Operation | Result |
 |---|---|---|
 | Validate | Reject malformed contracts, missing evidence references, and contradictory fields. | Three valid lane verdicts. |
-| Reduce | Select the worst verdict; break ties by evidence tier, then fixed lane priority. | One weakest flow. |
+| Reduce | Select the worst verdict; break ties by evidence tier, then fixed lane priority: evidence, then user, then business. This is the order enforced by `scripts/check_review.py`. | One weakest flow. |
 | Gate | Compare uncertainty, risk, and reversibility. Route taste, strategy, ethics, meaning, and risk appetite to the Human Judgment Gate. | A bounded proof step or accountable human decision. |
 | Emit | Produce `schemas/review-result.schema.json`. | Verdict, next action, execution boundary, and stop conditions. |
 
