@@ -85,6 +85,9 @@ accountable owner. Missing issuer or owner blocks implementation.
 - External tools return evidence receipts, not verdicts.
 - Evidence tier controls action size; confidence does not upgrade weak proof.
 - Council mode requires independent reviews and a challenge round.
+- If all independent Council reviews return continue, a valid
+  resources/schemas/red-team-review.schema.json result must be attached to
+  the Council input before synthesis.
 - Designer taste is a human-owned input, never an evidence score.
 - Incoming feedback must be classified before it changes direction or work.
 - Human-owned decisions stay human-owned.

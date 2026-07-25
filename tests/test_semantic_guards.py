@@ -112,7 +112,7 @@ class SemanticGuardTests(unittest.TestCase):
 
 
 class CouncilInputExampleTests(unittest.TestCase):
-    def test_council_input_example_validates(self):
+    def council_input_errors(self, document):
         from jsonschema import Draft202012Validator
         from referencing import Registry, Resource
 
@@ -132,13 +132,71 @@ class CouncilInputExampleTests(unittest.TestCase):
                 ),
             ])
         registry = Registry().with_resources(resources)
-        document = load_json("examples/ux3-council-input.json")
         validator = Draft202012Validator(
             schemas["council-input.schema.json"], registry=registry
         )
+        return list(validator.iter_errors(document))
+
+    def unanimous_continue_input(self):
+        document = load_json("examples/ux3-council-input.json")
+        for review in document["independent_reviews"]:
+            review["verdict"] = "continue"
+        return document
+
+    def valid_red_team_review(self):
+        return {
+            "review_id": "red-team-unanimous-continue-example",
+            "claim_ids": ["claim-delegated-operations"],
+            "evidence_receipt_ids": ["ev-support-2026-07"],
+            "failure_modes": [
+                "The assistant makes an irreversible customer change.",
+                "Operators lose the ability to interrupt the workflow.",
+                "Support volume rises after an incorrect automated action.",
+                "The workflow creates a compliance exception.",
+                "Users keep the current manual workaround.",
+            ],
+            "disconfirming_tests": [
+                "A supervised pilot shows no reduction in completion time.",
+            ],
+            "hidden_affected_people": ["Customers receiving automated changes."],
+            "current_workaround": "Operators complete each change manually.",
+            "substitute_threats": {
+                "direct": "A competing automation product.",
+                "indirect": "A shared operations service.",
+                "platform": "A native workflow feature.",
+                "workflow": "A checklist and queue process.",
+                "doing_nothing": "Keep the current manual workflow.",
+            },
+            "trust_risk": "An unexplained action damages customer confidence.",
+            "stop_condition": "Any pilot creates an unapproved customer change.",
+            "verdict": "verify",
+        }
+
+    def test_council_input_example_validates(self):
+        document = load_json("examples/ux3-council-input.json")
         errors = [
             f"{error.json_path}: {error.message}"
-            for error in validator.iter_errors(document)
+            for error in self.council_input_errors(document)
+        ]
+        self.assertEqual([], errors)
+
+    def test_unanimous_continue_requires_a_structured_red_team_review(self):
+        errors = self.council_input_errors(self.unanimous_continue_input())
+        self.assertTrue(
+            any(
+                error.validator == "required"
+                and "red_team_review" in error.message
+                for error in errors
+            ),
+            [f"{error.json_path}: {error.message}" for error in errors],
+        )
+
+    def test_unanimous_continue_accepts_a_valid_structured_red_team_review(self):
+        document = self.unanimous_continue_input()
+        document["red_team_review"] = self.valid_red_team_review()
+        errors = [
+            f"{error.json_path}: {error.message}"
+            for error in self.council_input_errors(document)
         ]
         self.assertEqual([], errors)
 

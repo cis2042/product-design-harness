@@ -412,6 +412,7 @@ class PublicSurfaceTests(unittest.TestCase):
         self.assertIn("examples/live-coding-product-brief.json", html)
         self.assertIn("examples/live-coding-review.json", html)
         self.assertIn("examples/live-coding-context-pack.json", html)
+        self.assertIn("examples/red-team-review.json", html)
 
     def test_readme_exposes_distilled_rule_inventory(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
