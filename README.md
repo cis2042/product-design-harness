@@ -5,9 +5,9 @@ launch, and user feedback.
 
 ## Who This Is For
 
-The operator of this harness is an AI agent - Claude Code, Codex, or any
-agent runtime. The agent installs it, loads the contracts, runs the
-reviews, and enforces the rules.
+The operator of this harness is an AI agent - any coding agent or agent
+runtime you already use. The agent installs it, loads the contracts,
+runs the reviews, and enforces the rules.
 
 Product designers and PMs are the beneficiaries, not the operators. Your
 entire entry point is one sentence: paste this repository URL to your
