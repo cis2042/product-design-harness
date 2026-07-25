@@ -16,4 +16,6 @@
 | `ux3-council-review.md` | Extended UX3 council review. |
 | `ux3-council-review.json` | Machine-checkable Council result. |
 | `human-decision.json` | Accountable decision record used by the Council example. |
+| `verdict-override.json` | Signed override of the stop_reframe example; validated by check_override. |
+| `verdict-override.md` | Human-readable override walkthrough. |
 | `evidence-response.json` | Evidence receipts with provenance and freshness. |

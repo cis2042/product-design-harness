@@ -82,7 +82,7 @@ Every claim below is verifiable inside this repository:
 
 | Claim | Verify at |
 |---|---|
-| One canonical machine contract for every review mode: `schemas/review-result.schema.json` (JSON Schema draft 2020-12, one of 16 schemas in the repo). | `schemas/review-result.schema.json` |
+| One canonical machine contract for every review mode: `schemas/review-result.schema.json` (JSON Schema draft 2020-12, one of 17 schemas in the repo). | `schemas/review-result.schema.json` |
 | Working-language setup is explicit while canonical identifiers remain English. | `schemas/session-config.schema.json` |
 | Canonical UX3 definitions and rule IDs are loaded from machine files. | `knowledge/ontology.json`, `knowledge/rules.json` |
 | 21 decision rule cards operationalize the current kernel; six newly distilled cards carry chapter-level provenance, including `ux3.rule.human_agent_interaction` and `ux3.rule.motivation_ethics`. | `knowledge/rules.json`, `knowledge/source-chapters.json`, `docs/DECISION-RULES.md` |

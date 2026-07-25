@@ -14,6 +14,7 @@ These schemas define machine-checkable Product Design Harness outputs.
 | `evidence-response.schema.json` | Response contract for external evidence retrieval. |
 | `evidence.schema.json` | Evidence receipt with provenance and freshness. |
 | `human-decision.schema.json` | Human-owned decision record. |
+| `verdict-override.schema.json` | Authorizes execution despite a verdict; never edits the review. |
 | `ontology.schema.json` | Machine-readable UX3 ontology. |
 | `product-brief.schema.json` | Machine-readable intake. |
 | `review-result.schema.json` | Canonical final result for every review mode. |
